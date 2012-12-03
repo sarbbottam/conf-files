@@ -29,5 +29,8 @@ export CLICOLOR=1
 # dir symlink sock pipe exe block char exe/w/setuid exe/w/setguid dir/w/s/bit dir/wo/s/bit
 export LSCOLORS="fxbxcxdxcxegedabagfgfh"
 
+# Tell grep to highlight matches
+export GREP_OPTIONS='--color=auto'
+
 # Invoke .bashrc
 source ~/.bashrc
