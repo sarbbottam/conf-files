@@ -3,9 +3,11 @@ export PS1='\[\033[31m\]\u\[\033[36m\]@\[\033[37m\]\h\[\033[35m\]:\[\033[32m\]\W
 
 # Update PATH
 #   for mysql
-export PATH=$PATH:/usr/local/mysql/bin
+PATH=$PATH:/usr/local/mysql/bin
 #   for phantomjs
-export PATH=$PATH:/usr/local/phantomjs/bin
+PATH=$PATH:/usr/local/phantomjs/bin
+
+export PATH
 
 # Customize ls color
 export CLICOLOR=1
