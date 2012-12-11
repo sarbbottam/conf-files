@@ -9,6 +9,9 @@ PATH=$PATH:/usr/local/phantomjs/bin
 
 export PATH
 
+# Git
+export GIT_EDITOR=vim
+
 # Customize ls color
 export CLICOLOR=1
 # a = black

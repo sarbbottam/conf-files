@@ -38,5 +38,6 @@ retab
 
 "make vim save and load the folding of the document each time it loads"
 "also places the cursor in the last place that it was left."
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufWinLeave ?* mkview
+au BufWinEnter ?* silent loadview
+
