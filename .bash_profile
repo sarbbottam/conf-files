@@ -6,7 +6,8 @@ export PS1='\[\033[31m\]\u\[\033[36m\]@\[\033[37m\]\h\[\033[35m\]:\[\033[32m\]\W
 PATH=$PATH:/usr/local/mysql/bin
 #   for phantomjs
 PATH=$PATH:/usr/local/phantomjs/bin
-
+#   for mojito
+PATH=$PATH:/usr/local/node_modules/mojito/bin/
 export PATH
 
 # Git

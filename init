@@ -1,0 +1,3 @@
+ln -s ~/Github/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/Github/dotfiles/.bashrc ~/.bashrc
+ln -s ~/Github/dotfiles/.vimrc ~/.vimrc

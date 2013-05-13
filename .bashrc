@@ -14,6 +14,8 @@ alias tree='find . -print | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
 alias rd='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222'
 alias dtcss='vi ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css'
 alias rmds='find . -name '*.DS_Store' -type f -delete'
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
+alias apache='sudo apachectl'
 
 alias vr='op Important/vger_refresh.app/'
 alias qtp='open -a "quicktime player"'
