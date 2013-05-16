@@ -16,12 +16,28 @@ alias dtcss='vi ~/Library/Application\ Support/Google/Chrome/Default/User\ Style
 alias rmds='find . -name '*.DS_Store' -type f -delete'
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 alias apache='sudo apachectl'
+alias ip='ifconfig | grep broadcast | grep inet | cut -d" " -f2'
+#alias home='op "/Applications/Google Chrome.app" http://`ip`/~$USER'
 
 alias vr='op Important/vger_refresh.app/'
 alias qtp='open -a "quicktime player"'
 alias vlc='open -a vlc'
 alias ..='cd ..'
 alias .-='cd -'
+
 # Invoke .yahoo
 source ~/.yahoo
 
+# Functions #
+function home() {
+  ip=`ifconfig | grep broadcast | grep inet | cut -d" " -f2`
+  if [ -z "$ip" ]
+    then
+      host=`hostname`.local; 
+    else
+      host=$ip
+  fi
+  op "/Applications/Google Chrome.app" http://$host/~$USER;
+}
+
+export -f home
