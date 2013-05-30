@@ -16,6 +16,7 @@ alias dtcss='vi ~/Library/Application\ Support/Google/Chrome/Default/User\ Style
 alias rmds='find . -name '*.DS_Store' -type f -delete'
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 alias apache='sudo apachectl'
+alias watch='compass watch'
 alias ip='ifconfig | grep broadcast | grep inet | cut -d" " -f2'
 #alias home='op "/Applications/Google Chrome.app" http://`ip`/~$USER'
 
