@@ -1,0 +1,18 @@
+#!/bin/sh
+
+rm -rf ~/.common-shell-confs
+
+rm -rf ~/.bash-confs
+
+rm -rf ~/.bashrc
+rm -rf ~/.bash_profile
+
+rm -rf ~/.zsh-confs
+
+rm -rf ~/.zshrc
+rm -rf ~/.zprofile
+
+rm -rf ~/.git-confs
+rm -rf ~/.gitconfig
+
+rm -rf ~/.vimrc

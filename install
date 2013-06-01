@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ln -s ~/GitHub/dotfiles/common-shell-confs ~/.common-shell-confs
 
 ln -s ~/GitHub/dotfiles/bash-confs ~/.bash-confs
