@@ -1,0 +1,8 @@
+# Invoke .yahoo
+source ~/.commons/.yahoo
+
+# Invoke .aliases
+source ~/.commons/.aliases
+
+# Invoke .functions
+source ~/.commons/.functions

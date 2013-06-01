@@ -1,8 +1,0 @@
-# Invoke .yahoo
-source ~/.yahoo
-
-# Invoke .aliases
-source ~/.aliases
-
-# Invoke .functions
-source ~/.functions

@@ -1,5 +1,5 @@
 # Invoke exports
-source ~/.exports
+source ~/.commons/.exports
 
 # Invoke .zshrc
 source ~/.zshrc
