@@ -2,17 +2,13 @@
 
 ## Installation:
 ### Create a directory named GitHub in the home disrectory and navigate to the same:
-<code>
-[-zsh] sarbbo@rushpress-lm:~ 吽 mkdir GitHub
-[-zsh] sarbbo@rushpress-lm:~ 吽 cd GitHub
-</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 mkdir GitHub</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 cd GitHub</code>
 
 ### Clone the repo:
-<code>
-[-zsh] sarbbo@rushpress-lm:~ 吽 git clone git@github.com:sarbbottam/dotfiles.git
-</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 git clone git@github.com:sarbbottam/dotfiles.git</code>
 
-** Before installing make sure to take a back up of the following files, if exist: **
+<em>Before installing make sure to take a back up of the following files, if exist: </em>
 
 * ~/.common-shell-confs
 * ~/.bash-confs
@@ -26,11 +22,7 @@
 * ~/.vimrc
 
 ### Execute the install file:
-<code>
-[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/dotfiles/install
-</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/dotfiles/install</code>
 
 ### If unistall is desired:
-<code>
-[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/dotfiles/unistall
-</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/dotfiles/unistall</code>
