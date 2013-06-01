@@ -1,0 +1,11 @@
+# Functions #
+function home() {
+  ip=`ifconfig | grep broadcast | grep inet | cut -d" " -f2`
+  if [ -z "$ip" ]
+    then
+      host=`hostname`.local;
+    else
+      host=$ip
+  fi
+  op -a "/Applications/Google Chrome Canary.app" http://$host/~$USER;
+}
