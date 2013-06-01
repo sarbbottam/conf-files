@@ -1,13 +1,13 @@
-ln -s ~/GitHub/dotfiles/.commons ~/.commons
+ln -s ~/GitHub/dotfiles/commons ~/.commons
 
-ln -s ~/GitHub/dotfiles/.bashrc ~/.bashrc
-ln -s ~/GitHub/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/GitHub/dotfiles/bashrc ~/.bashrc
+ln -s ~/GitHub/dotfiles/bash_profile ~/.bash_profile
 
-ln -s ~/GitHub/dotfiles/.zsh/ ~/.zsh/
+ln -s ~/GitHub/dotfiles/zshconfs ~/.zshconfs
 
-ln -s ~/GitHub/dotfiles/.zshrc ~/.zshrc
-ln -s ~/GitHub/dotfiles/.zprofile ~/.zprofile
+ln -s ~/GitHub/dotfiles/zshrc ~/.zshrc
+ln -s ~/GitHub/dotfiles/zprofile ~/.zprofile
 
-ln -s ~/GitHub/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/GitHub/dotfiles/gitconfig ~/.gitconfig
 
-ln -s ~/GitHub/dotfiles/.vimrc ~/.vimrc
+ln -s ~/GitHub/dotfiles/vimrc ~/.vimrc
