@@ -9,11 +9,5 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 autoload -U colors && colors
 PS1="[$0] %{$fg[cyan]%}%n%{$reset_color%}%{$fg[white]%}@%m:%{$fg[green]%}%1~ 吽%{$reset_color%} "
 
-# Invoke .yahoo
-source ~/.yahoo
-
-# Invoke .aliases
-source ~/.aliases
-
-# Invoke .functions
-source ~/.functions
+# Invoke .commons
+source ~/.commons

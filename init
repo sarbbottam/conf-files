@@ -4,6 +4,8 @@ ln -s ~/GitHub/dotfiles/.yahoo ~/.yahoo
 ln -s ~/GitHub/dotfiles/.aliases ~/.aliases
 ln -s ~/GitHub/dotfiles/.functions ~/.functions
 
+ln -s ~/GitHub/dotfiles/.commons ~/.commons
+
 ln -s ~/GitHub/dotfiles/.bashrc ~/.bashrc
 ln -s ~/GitHub/dotfiles/.bash_profile ~/.bash_profile
 
