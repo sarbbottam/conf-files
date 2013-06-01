@@ -1,3 +1,6 @@
+# Update PS1
+PS1='\[\033[31m\]\u\[\033[36m\]@\[\033[37m\]\h\[\033[35m\]:\[\033[32m\]\W 數\[\033[0m\] '
+
 # Aliases
 
 alias ll='ls -lrt'
@@ -34,7 +37,7 @@ function home() {
   ip=`ifconfig | grep broadcast | grep inet | cut -d" " -f2`
   if [ -z "$ip" ]
     then
-      host=`hostname`.local; 
+      host=`hostname`.local;
     else
       host=$ip
   fi

@@ -1,0 +1,4 @@
+alias linux='ssh naturesad-dr.eglbp.corp.yahoo.com'
+alias vm0='ssh naturesad-dr-vm0.eglbp.corp.yahoo.com'
+alias vm1='ssh naturesad-dr-vm1.eglbp.corp.yahoo.com'
+alias vm2='ssh naturesad-dr-vm2.eglbp.corp.yahoo.com'
