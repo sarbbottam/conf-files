@@ -1,5 +1,31 @@
 #!/bin/sh
 
+# To Do: Create an array and rename ach element if exist;
+# Backup existing files
+mv ~/.common-shell-confs ~/.common-shell-confs-prev
+
+mv ~/.bash-confs ~/.bash-confs-prev
+
+mv ~/.bashrc ~/.bashrc-prev
+mv ~/.bash_profile ~/.bash_profile-prev
+
+mv ~/.zsh-confs ~/.zsh-confs-prev
+
+mv ~/.zshrc ~/.zshrc-prev
+mv ~/.zprofile ~/.zprofile-prev
+
+mv ~/.git-confs ~/.git-confs-prev
+mv ~/.gitconfig ~/.gitconfig-prev
+
+mv ~/.vimrc ~/.vimrc-prev
+
+# Create ~/.vim/view directory, if not exists
+
+if [ ! -d ~/.vim/view ]; then
+  mkdir -p ~/vim.view;
+fi
+
+# Create SymLinks
 ln -s ~/GitHub/dotfiles/common-shell-confs ~/.common-shell-confs
 
 ln -s ~/GitHub/dotfiles/bash-confs ~/.bash-confs

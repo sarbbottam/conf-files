@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Remove SymLinks
 rm -rf ~/.common-shell-confs
 
 rm -rf ~/.bash-confs
@@ -16,3 +17,22 @@ rm -rf ~/.git-confs
 rm -rf ~/.gitconfig
 
 rm -rf ~/.vimrc
+
+# To Do: Create an array and rename ach element if exist;
+# Get the existing files from backup
+mv ~/.common-shell-confs-prev ~/.common-shell-confs
+
+mv ~/.bash-confs-prev ~/.bash-confs
+
+mv ~/.bashrc-prev ~/.bashrc
+mv ~/.bash_profile-prev ~/.bash_profile
+
+mv ~/.zsh-confs-prev ~/.zsh-confs
+
+mv ~/.zshrc-prev ~/.zshrc
+mv ~/.zprofile-prev ~/.zprofile
+
+mv ~/.git-confs-prev ~/.git-confs
+mv ~/.gitconfig-prev ~/.gitconfig
+
+mv ~/.vimrc-prev ~/.vimrc
