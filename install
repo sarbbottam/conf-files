@@ -22,7 +22,7 @@ mv ~/.vimrc ~/.vimrc-prev
 # Create ~/.vim/view directory, if not exists
 
 if [ ! -d ~/.vim/view ]; then
-  mkdir -p ~/vim.view;
+  mkdir -p ~/vim/view;
 fi
 
 # Create SymLinks
