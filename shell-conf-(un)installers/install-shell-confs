@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Create ~/.vim/view directory, if not exists
+if [ ! -d ~/.vim/view ]; then
+  echo "creating ~/.vim/view"
+  mkdir -p ~/.vim/view;
+  echo "command executed: mkdir -p ~/.vim/view;"
+  echo "created ~/.vim/view"
+fi
+
+# Backup existing files
+existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' '.vimrc');
+for existingConfFileName in "${existingConfFileNames[@]}"
+do
+  if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
+    modifiedConfFileName=$existingConfFileName-prev;
+    echo "backing up  ~/$existingConfFileName as ~/$modifiedConfFileName"
+    mv ~/$existingConfFileName ~/$modifiedConfFileName
+    echo "command executed: mv ~/$existingConfFileName ~/$modifiedConfFileName"
+    echo "backed up  ~/$existingConfFileName as ~/$modifiedConfFileName"
+    echo
+  fi
+done
+
+# Create SymLinks
+# ToDo Make the path relative
+confDirNames=('common-shell-confs' 'bash-confs' 'zsh-confs' 'git-confs' 'vim-confs');
+for confDirName in "${confDirNames[@]}"
+do
+  if [ -d ~/GitHub/conf-files/$confDirName ]; then
+    echo "creating SymLink ~/.$confDirName to ~/GitHub/conf-files/$confDirName"
+    ln -s  ~/GitHub/conf-files/$confDirName ~/.$confDirName
+    echo "command executed: ln -s  ~/GitHub/conf-files/$confDirName ~/.$confDirName"
+    echo "created SymLink ~/.$confDirName to ~/GitHub/conf-files/$confDirName"
+    echo
+  fi
+done
+
+confFileNames=('.bash-confs/bashrc' '.bash-confs/bash_profile' '.zsh-confs/zshrc' '.zsh-confs/zprofile' '.git-confs/gitconfig' '.vim-confs/vimrc');
+for confFileName in "${confFileNames[@]}"
+do
+  if [ -f ~/$confFileName ]; then
+    symLinkName=.`echo ~/$confFileName | sed ' s!.*/!! ; s/"$// '`
+    echo "creating SymLink ~/$symLinkName to ~/$confFileName"
+    ln -s  ~/$confFileName ~/$symLinkName
+    echo "command executed: ln -s  ~/$confFileName ~/$symLinkName"
+    echo "created SymLink ~/$symLinkName to ~/$confFileName"
+    echo
+  fi
+done

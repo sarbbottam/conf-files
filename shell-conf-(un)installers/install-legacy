@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# To Do: Create an array and rename ach element if exist;
+# Backup existing files
+mv ~/.common-shell-confs ~/.common-shell-confs-prev
+mv ~/.bash-confs ~/.bash-confs-prev
+mv ~/.zsh-confs ~/.zsh-confs-prev
+mv ~/.git-confs ~/.git-confs-prev
+mv ~/.vim-confs ~/.vim-confs-prev
+
+mv ~/.bashrc ~/.bashrc-prev
+mv ~/.bash_profile ~/.bash_profile-prev
+mv ~/.zshrc ~/.zshrc-prev
+mv ~/.zprofile ~/.zprofile-prev
+mv ~/.gitconfig ~/.gitconfig-prev
+mv ~/.vimrc ~/.vimrc-prev
+
+# Create ~/.vim/view directory, if not exists
+
+if [ ! -d ~/.vim/view ]; then
+  mkdir -p ~/vim/view;
+fi
+
+# Create SymLinks
+ln -s ~/GitHub/dotfiles/common-shell-confs ~/.common-shell-confs
+ln -s ~/GitHub/dotfiles/bash-confs ~/.bash-confs
+ln -s ~/GitHub/dotfiles/zsh-confs ~/.zsh-confs
+ln -s ~/GitHub/dotfiles/git-confs ~/.git-confs
+ln -s ~/GitHub/dotfiles/vim-confs ~/.vim-confs
+
+ln -s ~/.bash-confs/bashrc ~/.bashrc
+ln -s ~/.bash-confs/bash_profile ~/.bash_profile
+ln -s ~/.zsh-confs/zshrc ~/.zshrc
+ln -s ~/.zsh-confs/zprofile ~/.zprofile
+ln -s ~/.git-confs/gitconfig ~/.gitconfig
+ln -s ~/.vim-confs/vimrc ~/.vimrc

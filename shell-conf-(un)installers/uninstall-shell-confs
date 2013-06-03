@@ -1,0 +1,28 @@
+#!/bin/sh
+
+existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' '.vimrc');
+
+# Remove SymLinks
+for existingConfFileName in "${existingConfFileNames[@]}"
+do
+  if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
+    echo "removing SymLink up ~/$existingConfFileName"
+    rm -rf ~/$existingConfFileName
+    echo "command executed: rm -rf ~/$existingConfFileName"
+    echo "removed SymLink up ~/$existingConfFileName"
+    echo
+  fi
+done
+
+# Get the existing files from backup
+for existingConfFileName in "${existingConfFileNames[@]}"
+do
+  if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
+    modifiedConfFileName=$existingConfFileName-prev;
+    echo "renaming the previous conf file ~/$modifiedConfFileName to ~/$existingConfFileName"
+    mv ~/$modifiedConfFileName ~/$existingConfFileName
+    echo "command executed: mv ~/$modifiedConfFileName ~/$existingConfFileName"
+    echo "renamed the previous conf file ~/$modifiedConfFileName to ~/$existingConfFileName"
+    echo
+  fi
+done

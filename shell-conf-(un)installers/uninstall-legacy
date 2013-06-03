@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Remove SymLinks
+rm -rf ~/.common-shell-confs
+rm -rf ~/.bash-confs
+rm -rf ~/.zsh-confs
+rm -rf ~/.git-confs
+rm -rf ~/.vim-confs
+
+rm -rf ~/.bashrc
+rm -rf ~/.bash_profile
+rm -rf ~/.zshrc
+rm -rf ~/.zprofile
+rm -rf ~/.gitconfig
+rm -rf ~/.vimrc
+
+# Get the existing files from backup
+mv ~/.common-shell-confs-prev ~/.common-shell-confs
+mv ~/.bash-confs-prev ~/.bash-confs
+mv ~/.zsh-confs-prev ~/.zsh-confs
+mv ~/.git-confs-prev ~/.git-confs
+mv ~/.vim-confs-prev ~/.vim-confs
+
+mv ~/.bashrc-prev ~/.bashrc
+mv ~/.bash_profile-prev ~/.bash_profile
+mv ~/.zshrc-prev ~/.zshrc
+mv ~/.zprofile-prev ~/.zprofile
+mv ~/.gitconfig-prev ~/.gitconfig
+mv ~/.vimrc-prev ~/.vimrc

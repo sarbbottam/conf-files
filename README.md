@@ -7,10 +7,10 @@
 <code>[-zsh] sarbbo@rushpress-lm:~ 吽 cd GitHub</code>
 
 ### Clone the repo:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 git clone git@github.com:sarbbottam/dotfiles.git</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 git clone git@github.com:sarbbottam/conf-files.git</code>
 
 ### Execute the install file:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/dotfiles/install</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/conf-files/shell-conf-(un)installers/install-shell-confs</code>
 
 ### If unistall is desired:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/dotfiles/unistall</code>
+<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/conf-files/shell-conf-(un)installers/uninstall-shell-confs</code>
