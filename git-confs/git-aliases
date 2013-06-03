@@ -1,3 +1,4 @@
+alias gcout='git checkout'
 alias gadd='git add'
 alias gcommit='git commit'
 alias gstatus='git status'
