@@ -9,6 +9,11 @@ alias ebr='vi ~/.bashrc'
 alias sbp='so ~/.bash_profile'
 alias sbr='so ~/.bashrc'
 
+alias ezp='vi ~/.zprofile'
+alias ezr='vi ~/.zshrc'
+alias szp='so ~/.zprofile'
+alias szr='so ~/.zshrc'
+
 alias tree='find . -print | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
 alias rd='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222'
 alias dtcss='vi ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css'
