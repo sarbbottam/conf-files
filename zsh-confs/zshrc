@@ -5,12 +5,13 @@ compinit -C
 # Case-insensitive (all),partial-word and then substring completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# Update PS1
-autoload -U colors && colors
-PS1="[$0] %{$fg[cyan]%}%n%{$reset_color%}%{$fg[white]%}@%m:%{$fg[green]%}%1~ 吽%{$reset_color%} "
-
 # Invoke .commons
 source ~/.common-shell-confs/common
 
 # Invoke .history
 source ~/.zsh-confs/history
+
+# Update PS1
+autoload -U colors && colors
+setopt prompt_subst
+PS1="[$0] %{$fg[cyan]%}%n%{$reset_color%}%{$fg[white]%}@%m:%{$fg[green]%}%1~ 吽%{$reset_color%} "

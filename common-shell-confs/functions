@@ -9,3 +9,7 @@ function home() {
   fi
   op -a "/Applications/Google Chrome Canary.app" http://$host/~$USER;
 }
+
+function git-branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
+}
