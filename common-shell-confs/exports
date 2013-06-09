@@ -10,6 +10,19 @@ export PATH
 # Git
 export GIT_EDITOR=vim
 
+# SVN
+export SVN_EDITOR=vim
+
+# Only for Linux
+if [[ $OSTYPE == "linux-gnu" ]]; then
+  # Git
+  export GIT_SSH=/usr/local/bin/yssh
+  
+  # SVN
+  export SVN_SSH=/usr/local/bin/yssh
+  
+fi
+
 # Customize ls color
 export CLICOLOR=1
 # a = black
