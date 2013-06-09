@@ -14,4 +14,8 @@ source ~/.zsh-confs/history
 # Update PS1
 autoload -U colors && colors
 setopt prompt_subst
-PS1="[$0] %{$fg[cyan]%}%n%{$reset_color%}%{$fg[white]%}@%m:%{$fg[green]%}%1~ 吽%{$reset_color%} "
+
+# ToDo - need to refactor
+function precmd() {
+  PS1="[$0] %{$fg[cyan]%}%n%{$reset_color%}%{$fg[white]%}@%m:%{$fg[green]%}%1~ %{$fg[magenta]%}$(git-branch)%{$reset_color%} %{$fg[green]%}吽%{$reset_color%} "
+}
