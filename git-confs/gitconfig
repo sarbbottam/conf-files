@@ -3,3 +3,5 @@
 	email = sarbbottam.bandyopadhyay@gmail.com
 [color]
 	ui = auto
+[core]
+	autocrlf = true
