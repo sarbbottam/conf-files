@@ -7,6 +7,9 @@ PATH=$PATH:/usr/local/phantomjs/bin
 PATH=$PATH:/usr/local/node_modules/mojito/bin/
 export PATH
 
+# Node
+export NODE_PATH='/usr/local/lib/node_modules'
+
 # Git
 export GIT_EDITOR=vim
 
@@ -17,10 +20,10 @@ export SVN_EDITOR=vim
 if [[ $OSTYPE == "linux-gnu" ]]; then
   # Git
   export GIT_SSH=/usr/local/bin/yssh
-  
+
   # SVN
   export SVN_SSH=/usr/local/bin/yssh
-  
+
 fi
 
 # Customize ls color
