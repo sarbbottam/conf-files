@@ -19,9 +19,8 @@ function combo-start() {
   if [ ! -z $pid ]; then
     echo "combo server is already running with process id $pid"
   else
-    echo "starting combo server ..."
     (nohup node ~/GitHub/combo-server/combo-server.js >/dev/null 2>&1 &)
-    echo "combo server started with process id $!"
+    echo "combo server started"
   fi
 }
 
