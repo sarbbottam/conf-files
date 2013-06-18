@@ -4,4 +4,4 @@
 [color]
 	ui = auto
 [core]
-	autocrlf = true
+	autocrlf = input
