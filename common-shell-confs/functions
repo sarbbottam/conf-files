@@ -15,7 +15,7 @@ function git-branch() {
 }
 
 function combo-start() {
-  pid=`ps -ef | grep combo | grep -v grep | cut -d" " -f2`
+  pid=`pgrep -f combo`
   if [ ! -z $pid ]; then
     echo "combo server is already running with process id $pid"
   else
@@ -25,7 +25,7 @@ function combo-start() {
 }
 
 function combo-stop() {
-  pid=`ps -ef | grep combo | grep -v grep | cut -d" " -f2`
+  pid=`pgrep -f combo`
   if [ ! -z $pid ]; then
     kill -9 $pid >/dev/null 2>&1
     echo "combo server stopped"
@@ -48,7 +48,7 @@ function combo() {
 }
 
 function web-start() {
-  pid=`ps -ef | grep web | grep -v grep | cut -d" " -f2`
+  pid=`pgrep -f web`
   if [ ! -z $pid ]; then
     echo "web server is already running with process id $pid"
   else
@@ -58,7 +58,7 @@ function web-start() {
 }
 
 function web-stop() {
-  pid=`ps -ef | grep web | grep -v grep | cut -d" " -f2`
+  pid=`pgrep -f web`
   if [ ! -z $pid ]; then
     kill -9 $pid >/dev/null 2>&1
     echo "web server stopped"
