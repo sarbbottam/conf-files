@@ -46,3 +46,37 @@ function combo() {
     echo "combo start|stop"
   fi
 }
+
+function web-start() {
+  pid=`ps -ef | grep web | grep -v grep | cut -d" " -f2`
+  if [ ! -z $pid ]; then
+    echo "web server is already running with process id $pid"
+  else
+    (nohup node ~/GitHub/web-server/web-server.js >/dev/null 2>&1 &)
+    echo "web server started"
+  fi
+}
+
+function web-stop() {
+  pid=`ps -ef | grep web | grep -v grep | cut -d" " -f2`
+  if [ ! -z $pid ]; then
+    kill -9 $pid >/dev/null 2>&1
+    echo "web server stopped"
+  else
+    echo "web server is not running"
+  fi
+}
+
+function web() {
+  operation=$1;
+  if [ ! -z $operation ] && [ $operation = start ]; then
+    web-start
+  elif [ ! -z $operation ] && [ $operation = stop ]; then
+    web-stop
+  else
+    echo "invalid option"
+    echo "usage:"
+    echo "web start|stop"
+  fi
+}
+
