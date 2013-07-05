@@ -18,7 +18,7 @@ set encoding=utf-8
 
 "show/hide
 set number
-set list
+"set list
 
 "format
 set autoindent
@@ -27,6 +27,7 @@ set softtabstop=2
 set expandtab
 set shiftwidth=2
 set smartindent
+set paste
 retab
 
 "set cursorcolumn
