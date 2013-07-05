@@ -14,6 +14,12 @@ function git-branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
 }
 
+
+# cd into whatever is the forefront Finder window.
+cdf() {  # short for cdfinder
+  cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
+}
+
 function combo-start() {
   pid=`pgrep -f combo`
   if [ ! -z $pid ]; then
