@@ -1,5 +1,5 @@
 alias gdiff='git diff'
-alias glog='git log --oneline'
+alias glog='git log --oneline --graph --all --decorate'
 alias gcout='git checkout'
 alias gadd='git add'
 alias gcommit='git commit'

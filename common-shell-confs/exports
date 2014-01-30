@@ -3,6 +3,8 @@
 PATH=$PATH:/usr/local/mysql/bin
 #   for phantomjs
 PATH=$PATH:/usr/local/phantomjs/bin
+#   for mongodb
+PATH=$PATH:/usr/local/mongodb/bin
 #   for mojito
 PATH=$PATH:/usr/local/node_modules/mojito/bin/
 export PATH
