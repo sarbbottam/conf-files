@@ -5,5 +5,27 @@
 	ui = auto
 [core]
 	autocrlf = input
+	excludesfile = ~/.gitignore_global
 [push]
 	default = matching
+[alias]
+    br = branch
+
+	co = checkout
+
+    st = status
+    df = diff
+    all = add --all
+	ci = commit
+
+	unstage = reset HEAD --
+
+    last = log -1 HEAD
+    lo = log --oneline --graph --all --decorate
+
+    pl = pull
+    ps = push
+
+    addup = remote add upstream
+    fetchup = fetch upstream
+    sync = merge upstream/master

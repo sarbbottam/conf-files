@@ -3,7 +3,6 @@ source ~/.common-shell-confs/yahoo
 
 # Invoke .aliases
 source ~/.common-shell-confs/aliases
-source ~/.git-confs/git-aliases
 
 # Invoke .functions
 source ~/.common-shell-confs/functions
