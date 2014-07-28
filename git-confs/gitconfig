@@ -11,14 +11,14 @@
 [alias]
     br = branch
 
-	co = checkout
+    co = checkout
 
     st = status
     df = diff
     all = add --all
-	ci = commit
+    ci = commit
 
-	unstage = reset HEAD --
+    unstage = reset HEAD --
 
     last = log -1 HEAD
     lo = log --oneline --graph --all --decorate
