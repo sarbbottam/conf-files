@@ -28,4 +28,4 @@
 
     addup = remote add upstream
     fetchup = fetch upstream
-    sync = merge upstream/master
+    syncup = merge upstream/master
