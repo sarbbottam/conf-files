@@ -9,23 +9,26 @@
 [push]
 	default = matching
 [alias]
-    br = branch
+  br = branch
 
-    co = checkout
+  co = checkout
 
-    st = status
-    df = diff
-    all = add --all
-    ci = commit
+  st = status
+  df = diff
+  all = add --all
+  ci = commit
 
-    unstage = reset HEAD --
+  unstage = reset HEAD --
 
-    last = log -1 HEAD
-    lo = log --oneline --graph --all --decorate
+  last = log -1 HEAD
+  lo = log --oneline --graph --all --decorate
 
-    pl = pull
-    ps = push
+  pl = pull
+  ps = push
 
-    addup = remote add upstream
-    fetchup = fetch upstream
-    syncup = merge upstream/master
+  addup = remote add upstream
+  fetchup = fetch upstream
+  syncup = merge upstream/master
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
