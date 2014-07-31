@@ -21,7 +21,7 @@
   unstage = reset HEAD --
 
   last = log -1 HEAD
-  lo = log --oneline --graph --all --decorate
+  lol = log --oneline --graph --all --decorate
 
   pl = pull
   ps = push
