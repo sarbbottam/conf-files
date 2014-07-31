@@ -29,6 +29,9 @@
   addup = remote add upstream
   fetchup = fetch upstream
   syncup = merge upstream/master
+
+  rmlocal = branch -D
+  rmremote = push origin --delete
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
