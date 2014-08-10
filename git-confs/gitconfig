@@ -1,14 +1,15 @@
 [user]
-	name = Sarbbottam Bandyopadhyay
-	email = sarbbottam@gmail.com
+  name = Sarbbottam Bandyopadhyay
+  email = sarbbottam@gmail.com
 [color]
-	ui = auto
+  ui = auto
 [core]
-	autocrlf = input
-	excludesfile = ~/.gitignore_global
+  autocrlf = input
+  excludesfile = ~/.gitignore_global
 [push]
-	default = matching
+  default = matching
 [alias]
+  cl = clone
   br = branch
 
   co = checkout
@@ -30,8 +31,10 @@
   fetchup = fetch upstream
   syncup = merge upstream/master
 
+  toinitial = rebase -i --root master
+
   rmlocal = branch -D
   rmremote = push origin --delete
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f

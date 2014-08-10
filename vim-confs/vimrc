@@ -1,11 +1,7 @@
 set nocompatible
 set cursorline
-"filetype on
-"filetype indent on
-"filetype plugin on
 
 syntax enable
-"set syntax on
 
 "search
 set ignorecase
@@ -33,7 +29,7 @@ retab
 "set cursorcolumn
 "set spell
 "set spellsuggest=10
-" abbreviation short = Very Very Long Version
+"abbreviation short = Very Very Long Version
 "cabbrev short Very Very Long Version
 "set foldmethod=indent
 
@@ -42,3 +38,5 @@ retab
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 
+"execute pathogen
+execute pathogen#infect()

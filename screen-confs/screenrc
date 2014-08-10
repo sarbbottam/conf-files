@@ -1,0 +1,14 @@
+bindkey -k k7 detach
+bindkey -k k8 kill
+bindkey -k k9 screen
+bindkey -k k; title
+bindkey -k F1 prev
+bindkey -k F2 next
+
+caption always "%{+b rk}%H%{gk} | %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? |"
+
+screen -t pretendintend 0
+screen -t bredtread  1
+screen -t blanksank 2
+screen -t flatthat 3
+screen -t prepstep  4

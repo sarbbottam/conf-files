@@ -33,6 +33,7 @@ alias syncpages='git checkout gh-pages; git merge master; git checkout master'
 alias zip_assets='rm -rf scss package.json config.rb README.md Gruntfile.js pages/ assets/scss/; zip -r Archive *'
 
 alias npmui='npm-check-updates -u && sudo npm install'
-alias node='node --harmony --use-strict'
+
+alias nodeh='node --harmony --use-strict'
 
 alias startssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'

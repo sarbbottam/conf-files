@@ -1,16 +1,22 @@
-#  Basic bash, zsh, git, vim configs.
+#  Basic bash, zsh, git, vim, screen configs.
 
 ## Installation:
 ### Create a directory named GitHub in the home disrectory if not exist and navigate to the same:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 mkdir GitHub</code>
-<br/>
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 cd GitHub</code>
+```
+[zsh] sarbbo@rushpress-lm:~ 吽 mkdir GitHub; cd $_
+```
 
 ### Clone the repo:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 git clone git@github.com:sarbbottam/conf-files.git</code>
+```
+[-zsh] sarbbo@rushpress-lm:~ 吽 git clone git@github.com:sarbbottam/conf-files.git
+```
 
 ### Execute the install file:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/conf-files/shell-conf-(un)installers/install-shell-confs</code>
+```
+[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/conf-files/(un)installers/install
+```
 
 ### If unistall is desired:
-<code>[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/conf-files/shell-conf-(un)installers/uninstall-shell-confs</code>
+```
+[-zsh] sarbbo@rushpress-lm:~ 吽 ./GitHub/conf-files/(un)installers/uninstall
+```
