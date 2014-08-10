@@ -8,6 +8,30 @@ if [ ! -d ~/.vim/view ]; then
   echo "created ~/.vim/view"
 fi
 
+# Create ~/.vim/autoload directory, if not exists
+if [ ! -d ~/.vim/autoload ]; then
+  echo "creating ~/.vim/autoload"
+  mkdir -p ~/.vim/autoload;
+  echo "command executed: mkdir -p ~/.vim/autoload;"
+  echo "created ~/.vim/autoload"
+fi
+
+# Create ~/.vim/bundle directory, if not exists
+if [ ! -d ~/.vim/bundle ]; then
+  echo "creating ~/.vim/bundle"
+  mkdir -p ~/.vim/bundle;
+  echo "command executed: mkdir -p ~/.vim/bundle;"
+  echo "created ~/.vim/bundle"
+fi
+
+# Create ~/.vim/autoload/pathogen.vim, if not exists
+if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
+  echo "creating ~/.vim/autoload/pathogen.vim"
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
+  echo "command executed: curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;"
+  echo "created ~/.vim/autoload/pathogen.vim"
+fi
+
 # Backup existing files
 existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' 'gitignore_global' '.vimrc' '.screenrc');
 for existingConfFileName in "${existingConfFileNames[@]}"
