@@ -1,5 +1,29 @@
 #!/bin/sh
 
+# Create ~/GitCorp directory, if not exists
+if [ ! -d ~/GitCorp ]; then
+  echo "creating ~/GitCorp"
+  mkdir ~/GitCorp;
+  echo "command executed: mkdir ~/GitCorp;"
+  echo "created ~/GitCorp"
+fi
+
+# Create ~/Sites directory, if not exists
+if [ ! -d ~/Sites ]; then
+  echo "creating ~/Sites"
+  mkdir ~/Sites;
+  echo "command executed: mkdir ~/Sites;"
+  echo "created ~/Sites"
+fi
+
+# Create ~/Downloads directory, if not exists
+if [ ! -d ~/Downloads ]; then
+  echo "creating ~/Downloads"
+  mkdir ~/Downloads;
+  echo "command executed: mkdir ~/Downloads;"
+  echo "created ~/Downloads"
+fi
+
 # Create ~/.vim/view directory, if not exists
 if [ ! -d ~/.vim/view ]; then
   echo "creating ~/.vim/view"
