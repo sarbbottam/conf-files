@@ -15,7 +15,7 @@ function git-branch() {
 }
 
 function shell() {
-  ps | grep $$ | grep -v grep | awk '{print $4}' | sed -e 's/^.*\/bin\///g'
+  ps | grep $$ | grep -v grep | awk '{print $4}' | sed -e 's/^.*\/bin\///g' -e 's/\-//g'
 }
 
 # cd into whatever is the forefront Finder window.
