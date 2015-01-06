@@ -49,3 +49,13 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
   source ~/.common-shell-confs/ssh-auth-sock
   export_ssh_auth_sock
 fi
+
+#Maven
+export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.5
+export M2=$M2_HOME/bin
+export PATH=$M2:$PATH
+
+#Java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
+export JAVA=$JAVA_HOME/bin
+export PATH=$JAVA:$PATH

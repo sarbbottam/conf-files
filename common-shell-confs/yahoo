@@ -8,3 +8,5 @@ alias flatthat='ssh flatthat.corp.ne1.yahoo.com'
 # gq1
 alias pretendintend='ssh pretendintend.corp.gq1.yahoo.com'
 alias bredtread='ssh bredtread.corp.gq1.yahoo.com'
+
+alias ne1='ssh r01qa.member.ne1.yahoo.com'
