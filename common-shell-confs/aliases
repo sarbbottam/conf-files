@@ -37,3 +37,14 @@ alias npmui='npm-check-updates -u && sudo npm install'
 alias nodeh='node --harmony --use-strict'
 
 alias startssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
+
+alias syncprotostart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
+alias syncprotostop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
+
+alias syncnodejsstart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/nodejs.plist'
+alias syncnodejsstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/nodejs.plist'
+
+alias syncwebservicestart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/webservice.plist'
+alias syncwebservicestop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/webservice.plist'
+
+alias tunnelstart='ssh -L 8022:localhost:8006 decentrecent.corp.ne1.yahoo.com'
