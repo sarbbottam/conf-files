@@ -1,0 +1,13 @@
+if [[ $1 != "" && $2 != "" && $3 != "" ]]; then
+    TITLE="file change detected at $1"
+    /usr/bin/rsync -rzOte ssh --exclude 'node_modules' --exclude '.idea' --exclude 'coverage' --exclude 'build' --delete $1/ $USER@$2:$3/
+    if [ $? == 0 ]; then
+        MESSAGE="rsync completed"
+    else
+        MESSAGE="error during rsync"
+    fi
+    osascript -e "display notification \"$MESSAGE\" with title \"$TITLE\""
+else
+    osascript -e "display notification \"no project folder and/or server address passed in\" with title \"error synching with remote host\""
+    exit 1
+fi
