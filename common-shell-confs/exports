@@ -1,13 +1,8 @@
 # Update PATH
 #   for mysql
 PATH=$PATH:/usr/local/mysql/bin
-#   for phantomjs
-PATH=$PATH:/usr/local/phantomjs/bin
 #   for mongodb
 PATH=$PATH:/usr/local/mongodb/bin
-#   for mojito
-PATH=$PATH:/usr/local/node_modules/mojito/bin/
-export PATH
 
 # Node
 export NODE_PATH='/usr/local/lib/node_modules'
@@ -59,3 +54,8 @@ export PATH=$M2:$PATH
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
 export JAVA=$JAVA_HOME/bin
 export PATH=$JAVA:$PATH
+
+#adb
+export ADB='/Applications/Android Studio.app/sdk/platform-tools'
+export PATH=$ADB:$PATH
+
