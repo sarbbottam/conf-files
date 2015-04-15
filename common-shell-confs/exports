@@ -3,6 +3,8 @@
 PATH=$PATH:/usr/local/mysql/bin
 #   for mongodb
 PATH=$PATH:/usr/local/mongodb/bin
+# for heroku
+PATH=$PATH:/usr/local/heroku/bin:
 
 # Node
 export NODE_PATH='/usr/local/lib/node_modules'
@@ -46,16 +48,18 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
 fi
 
 #Maven
-export M2_HOME=/usr/local/apache-maven/apache-maven-3.2.5
+export M2_HOME=/usr/local/lib/apache-maven
 export M2=$M2_HOME/bin
-export PATH=$M2:$PATH
+PATH=$PATH:$M2
 
 #Java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 export JAVA=$JAVA_HOME/bin
-export PATH=$JAVA:$PATH
+PATH=$PATH:$JAVA
 
 #adb
 export ADB='/Applications/Android Studio.app/sdk/platform-tools'
-export PATH=$ADB:$PATH
+PATH=$ADB:$PATH
+
+export PATH
 
