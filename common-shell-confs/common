@@ -6,6 +6,3 @@ source ~/.common-shell-confs/aliases
 
 # Invoke .functions
 source ~/.common-shell-confs/functions
-
-# Invoke nvm.sh
-source ~/.nvm/nvm.sh
