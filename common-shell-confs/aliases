@@ -28,7 +28,7 @@ alias vlc='open -a vlc'
 alias ..='cd ..'
 alias .-='cd -'
 
-alias syncpages='git checkout gh-pages; git merge master; git checkout master'
+alias syncpages='git checkout gh-pages; git rebase master; git checkout master'
 
 alias zip_assets='rm -rf scss package.json config.rb README.md Gruntfile.js pages/ assets/scss/; zip -r Archive *'
 
