@@ -7,8 +7,9 @@ bindkey -k F2 next
 
 caption always "%{+b rk}%H%{gk} | %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? |"
 
-screen -t pretendintend 0
-screen -t bredtread  1
-screen -t blanksank 2
-screen -t flatthat 3
-screen -t prepstep  4
+screen -t screen 0
+screen -t blanksank  1
+screen -t nodejs 2
+screen -t webservice 3
+screen -t prototype  4
+screen -t prepstep 5
