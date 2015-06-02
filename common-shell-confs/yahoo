@@ -6,6 +6,7 @@ alias blanksank='ssh blanksank.corp.ne1.yahoo.com'
 alias nodejs='ssh chaircompare.corp.ne1.yahoo.com'
 alias webservice='ssh decentrecent.corp.ne1.yahoo.com'
 alias prototype='ssh disgracepace.corp.ne1.yahoo.com'
+alias xtmux='ssh permitsfits.corp.ne1.yahoo.com'
 
 # gq1
-alias xscreen='ssh henceimmense.corp.gq1.yahoo.com'
+alias userstudy='ssh henceimmense.corp.gq1.yahoo.com'

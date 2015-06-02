@@ -41,6 +41,9 @@ alias startssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
 alias syncprotostart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
 alias syncprotostop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
 
+alias syncuserstudystart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/userstudy.plist'
+alias syncuserstudystop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/userstudy.plist'
+
 alias syncnodejsstart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/nodejs.plist'
 alias syncnodejsstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/nodejs.plist'
 
