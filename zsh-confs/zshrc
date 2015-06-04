@@ -17,6 +17,6 @@ setopt prompt_subst
 
 # ToDo - need to refactor
 function precmd() {
-  PROMPT="[$(shell)] %{$fg[cyan]%}%n%{$reset_color%} at %{$fg[white]%}%m%{$reset_color%} in %{$fg[green]%}%~ %{$fg[magenta]%}$(git-branch)%{$reset_color%}
+  PROMPT="[$(shell)] %{$fg[cyan]%}%n%{$reset_color%} at %{$fg[white]%}%m$(yrootname)%{$reset_color%} in %{$fg[green]%}%~ %{$fg[magenta]%}$(git-branch)%{$reset_color%}
 %{$fg[green]%}吽%{$reset_color%} "
 }
