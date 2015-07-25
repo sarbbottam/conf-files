@@ -1,0 +1,5 @@
+# Docker
+eval "$(boot2docker shellinit)"
+# Overwriting to localhost
+# export DOCKER_HOST=tcp://127.0.0.1:2375
+export DOCKER_TLS_VERIFY=0

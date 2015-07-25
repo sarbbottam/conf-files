@@ -51,3 +51,5 @@ alias syncwebservicestart='launchctl load /Users/sarbbo/GitHub/conf-files/remote
 alias syncwebservicestop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/webservice.plist'
 
 alias tunnelstart='ssh -L 8022:localhost:8006 decentrecent.corp.ne1.yahoo.com'
+
+alias setdocker='source ~/.docker'

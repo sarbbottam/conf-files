@@ -57,7 +57,7 @@ if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
 fi
 
 # Backup existing files
-existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' 'gitignore_global' '.vimrc' '.screenrc');
+existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' 'gitignore_global' '.vimrc' '.screenrc' '.docker');
 for existingConfFileName in "${existingConfFileNames[@]}"
 do
   if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
@@ -72,7 +72,7 @@ done
 
 # Create SymLinks
 # ToDo Make the path relative
-confDirNames=('common-shell-confs' 'bash-confs' 'zsh-confs' 'git-confs' 'vim-confs' 'screen-confs');
+confDirNames=('common-shell-confs' 'bash-confs' 'zsh-confs' 'git-confs' 'vim-confs' 'screen-confs' 'docker-confs');
 for confDirName in "${confDirNames[@]}"
 do
   if [ -d ~/GitHub/conf-files/$confDirName ]; then
@@ -84,7 +84,7 @@ do
   fi
 done
 
-confFileNames=('.bash-confs/bashrc' '.bash-confs/bash_profile' '.zsh-confs/zshrc' '.zsh-confs/zprofile' '.git-confs/gitconfig' '.git-confs/gitignore_global' '.vim-confs/vimrc' '.screen-confs/screenrc');
+confFileNames=('.bash-confs/bashrc' '.bash-confs/bash_profile' '.zsh-confs/zshrc' '.zsh-confs/zprofile' '.git-confs/gitconfig' '.git-confs/gitignore_global' '.vim-confs/vimrc' '.screen-confs/screenrc' '.docker-confs/docker');
 for confFileName in "${confFileNames[@]}"
 do
   if [ -f ~/$confFileName ]; then
