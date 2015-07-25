@@ -6,3 +6,6 @@ source ~/.common-shell-confs/aliases
 
 # Invoke .functions
 source ~/.common-shell-confs/functions
+
+# Invoke travis.sh if available
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
