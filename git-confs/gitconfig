@@ -27,6 +27,7 @@
   pl = pull
   ps = push
 
+  addori = remote add origin
   addup = remote add upstream
   fetchup = fetch upstream
   mergeup = merge upstream/master
