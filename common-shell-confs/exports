@@ -62,9 +62,8 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
 export JAVA=$JAVA_HOME/bin
 PATH=$PATH:$JAVA
 
-#adb
+# ADB
 export ADB='/Applications/Android Studio.app/sdk/platform-tools'
 PATH=$ADB:$PATH
 
 export PATH
-
