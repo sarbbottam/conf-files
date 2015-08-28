@@ -8,6 +8,7 @@
   excludesfile = ~/.gitignore_global
 [push]
   default = matching
+  followTags = true
 [alias]
   cl = clone
   br = branch
