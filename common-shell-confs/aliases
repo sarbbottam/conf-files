@@ -50,6 +50,9 @@ alias syncnodejsstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sy
 alias syncwebservicestart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/webservice.plist'
 alias syncwebservicestop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/webservice.plist'
 
+alias syncsportsstart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/sports.plist'
+alias syncsportsstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/sports.plist'
+
 alias tunnelstart='ssh -L 8022:localhost:8006 decentrecent.corp.ne1.yahoo.com'
 
 alias setdocker='source ~/.docker'
