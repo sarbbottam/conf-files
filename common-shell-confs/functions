@@ -10,6 +10,12 @@ function home() {
   op -a "/Applications/Google Chrome.app" http://$host/~$USER;
 }
 
+function git-status {
+  [[ $(git status 2> /dev/null | tail -n1) == "fatal: Not a git repository (or any of the parent directories): .git" ]] ||
+    [[ $(git status 2> /dev/null | tail -n1) == "no changes added to commit (use \"git add\" and/or \"git commit -a\")" ]] &&
+      echo "*"
+}
+
 function git-branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\(\1\)/'
 }
