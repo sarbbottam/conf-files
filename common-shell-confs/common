@@ -1,6 +1,3 @@
-# Invoke .yahoo
-source ~/.common-shell-confs/yahoo
-
 # Invoke .aliases
 source ~/.common-shell-confs/aliases
 
