@@ -1,6 +1,6 @@
 #!/bin/sh
 
-existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.gitignore_global' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' '.vimrc' '.screenrc');
+existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.gitignore_global' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' '.vimrc');
 
 # Remove SymLinks
 for existingConfFileName in "${existingConfFileNames[@]}"
