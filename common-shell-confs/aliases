@@ -16,11 +16,9 @@ alias szr='so ~/.zshrc'
 
 alias tree='find . -print | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
 alias rd='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222'
-alias dtcss='vi ~/Library/Application\ Support/Google/Chrome/Default/User\ StyleSheets/Custom.css'
 alias rmds='find . -name "*.DS_Store" -type f -delete'
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
 alias apache='sudo apachectl'
-alias watch='compass watch'
 alias ip='ifconfig | grep broadcast | grep inet | cut -d" " -f2'
 
 alias qtp='open -a "quicktime player"'
@@ -29,12 +27,6 @@ alias ..='cd ..'
 alias .-='cd -'
 
 alias syncpages='git checkout gh-pages; git rebase master; git checkout master'
-
-alias zip_assets='rm -rf scss package.json config.rb README.md Gruntfile.js pages/ assets/scss/; zip -r Archive *'
-
-alias npmui='npm-check-updates -u && sudo npm install'
-
-alias nodeh='node --harmony --use-strict'
 
 alias startssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
 
@@ -46,7 +38,5 @@ alias syncmembershipstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remot
 
 alias syncsportsstart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/sports.plist'
 alias syncsportsstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/sports.plist'
-
-alias tunnelstart='ssh -L 8022:localhost:8006 decentrecent.corp.ne1.yahoo.com'
 
 alias setdocker='source ~/.docker'
