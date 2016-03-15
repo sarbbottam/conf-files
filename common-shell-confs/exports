@@ -45,10 +45,6 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
   # ssh
   source ~/.common-shell-confs/ssh-auth-sock
   export_ssh_auth_sock
-
-  # daily fantasy
-  export NODE_PATH=/home/y/lib/node_modules:$NODE_PATH
-  export INSTANCE=`hostname`":3000"
 fi
 
 # Jmeter
