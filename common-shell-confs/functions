@@ -49,43 +49,6 @@ cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
 }
 
-function web-start() {
-  pid=`pgrep -f web`
-  if [ ! -z $pid ]; then
-    echo "web server is already running with process id $pid"
-  else
-    (nohup node ~/GitHub/web-server/web-server.js >/dev/null 2>&1 &)
-    echo "web server started"
-  fi
-}
-
-function web-stop() {
-  pid=`pgrep -f web`
-  if [ ! -z $pid ]; then
-    kill -9 $pid >/dev/null 2>&1
-    echo "web server stopped"
-  else
-    echo "web server is not running"
-  fi
-}
-
-function web() {
-  operation=$1;
-  if [ ! -z $operation ] && [ $operation = start ]; then
-    web-start
-  elif [ ! -z $operation ] && [ $operation = stop ]; then
-    web-stop
-  elif [ ! -z $operation ] && [ $operation = restart ]; then
-    web-stop
-    web-start
-  else
-    echo "invalid option"
-    echo "usage:"
-    echo "web start|stop|restart"
-  fi
-}
-
 code () {
   VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
 }
-
