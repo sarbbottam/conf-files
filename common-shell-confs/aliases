@@ -33,10 +33,4 @@ alias startssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
 alias syncprotostart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
 alias syncprotostop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
 
-alias syncmembershipstart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/membership.plist'
-alias syncmembershipstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/membership.plist'
-
-alias syncsportsstart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/sports.plist'
-alias syncsportsstop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/sports.plist'
-
 alias setdocker='source ~/.docker'
