@@ -66,4 +66,8 @@ PATH=$PATH:$JAVA
 export ADB='/Applications/Android Studio.app/sdk/platform-tools'
 PATH=$ADB:$PATH
 
+# ./node_modules/.bin
+export LOCAL_NODE_BINARIES='./node_modules/.bin'
+PATH=$PATH:$LOCAL_NODE_BINARIES:
+
 export PATH
