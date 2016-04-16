@@ -38,12 +38,6 @@ function shell() {
   ps | grep $$ | grep -v grep | awk '{print $4}' | sed -e 's/^.*\/bin\///g' -e 's/\-//g'
 }
 
-function yrootname() {
-  if [ "x$YROOT_NAME" != "x" ]; then
-    echo '['$YROOT_NAME']'
-  fi
-}
-
 # cd into whatever is the forefront Finder window.
 cdf() {  # short for cdfinder
   cd "`osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)'`"
