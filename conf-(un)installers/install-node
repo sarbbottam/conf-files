@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# create directory /usr/local/n
+# n needs this directory to store the installed node versions
+nDir='/usr/local/n/versions/'
+if [ ! -d $nDir ]; then
+  echo "creating $nDir"
+  sudo mkdir -p $nDir;
+  if [ $? == 0 ]; then
+    echo "command executed: sudo mkdir $nDir;"
+    echo "created $nDir"
+  fi
+fi
+
+# change owner of /usr/local/{bin,lib,n} to current user
+# to avoid installing global node_modules with sudo
+localDirs=('/usr/local/bin' '/usr/local/lib' '/usr/local/n');
+for localDir in "${localDirs[@]}"
+do
+  if [ -d $localDir ]; then
+    echo "changing owner of $localDir"
+    sudo chown -R $USER $localDir
+    if [ $? == 0 ]; then
+      echo "command executed: sudo chown $USER $localDir;"
+      echo "changed owner of $localDir"
+      echo
+    fi
+  fi
+done
+
+# fetch n from github and set the x flag on
+nBin=/usr/local/bin/n
+echo "fetching n"
+curl -o $nBin https://raw.githubusercontent.com/sarbbottam/n/master/bin/n
+echo "setting on the x flag"
+chmod 755 $nBin
+
+# install node
+n latest

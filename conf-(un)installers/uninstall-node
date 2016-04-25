@@ -1,0 +1,25 @@
+#!/bin/sh
+
+nDir='/usr/local/n'
+if [ -d $nDir ]; then
+  echo "removing $nDir"
+  sudo rm -rf $nDir;
+  if [ $? == 0 ]; then
+    echo "command executed: rm -rf $nDir;"
+    echo "removed $nDir"
+  fi
+fi
+
+bins=('/usr/local/bin/n' '/usr/local/bin/node');
+for bin in "${bins[@]}"
+do
+  if [ -f $bin ]; then
+    echo "removing $bin"
+    sudo rm -rf $bin;
+    if [ $? == 0 ]; then
+      echo "command executed: sudo rm -rf $bin;"
+      echo "removed $bin"
+      echo
+    fi
+  fi
+done
