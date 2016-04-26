@@ -37,3 +37,16 @@ chmod 755 $nBin
 
 # install node
 n latest
+
+# install awesome global node_modules
+nodeModules=('commitizen' 'cz-conventional-changelog' 'semantic-release-cli' 'greenkeeper' 'http-server'  'watch-and-rsync' 'yo' 'doctoc');
+for nodeModule in "${nodeModules[@]}"
+do
+  echo "installing $nodeModule globally"
+  npm i -g $nodeModule
+  if [ $? == 0 ]; then
+    echo "command executed: npm i -g $nodeModule"
+    echo "installed $nodeModule globally"
+    echo
+  fi
+done

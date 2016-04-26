@@ -1,15 +1,19 @@
 #!/bin/sh
 
-nDir='/usr/local/n'
-if [ -d $nDir ]; then
-  echo "removing $nDir"
-  sudo rm -rf $nDir;
+# uninstall awesome global node_modules
+nodeModules=('commitizen' 'cz-conventional-changelog' 'semantic-release-cli' 'greenkeeper' 'http-server'  'watch-and-rsync' 'yo' 'doctoc');
+for nodeModule in "${nodeModules[@]}"
+do
+  echo "uninstalling $nodeModule globally"
+  npm rm -g $nodeModule
   if [ $? == 0 ]; then
-    echo "command executed: rm -rf $nDir;"
-    echo "removed $nDir"
+    echo "command executed: npm rm -g $nodeModule"
+    echo "uninstalled $nodeModule globally"
+    echo
   fi
-fi
+done
 
+# uninstall node and n
 bins=('/usr/local/bin/n' '/usr/local/bin/node');
 for bin in "${bins[@]}"
 do
@@ -23,3 +27,14 @@ do
     fi
   fi
 done
+
+# delete /usr/local/n
+nDir='/usr/local/n'
+if [ -d $nDir ]; then
+  echo "removing $nDir"
+  sudo rm -rf $nDir;
+  if [ $? == 0 ]; then
+    echo "command executed: rm -rf $nDir;"
+    echo "removed $nDir"
+  fi
+fi
