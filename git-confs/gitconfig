@@ -39,6 +39,8 @@
   rmlocal = branch -D
   rmremote = push origin --delete
 
+  aliases = config --get-regexp alias
+
   corp = config --local user.email "sarbbo@yahoo-inc.com"
 
 [filter "media"]
