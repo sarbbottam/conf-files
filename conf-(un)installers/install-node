@@ -14,12 +14,12 @@ fi
 
 # change owner of /usr/local/{bin,lib,n} to current user
 # to avoid installing global node_modules with sudo
-localDirs=('/usr/local/bin' '/usr/local/lib' '/usr/local/n');
+localDirs=('bin' 'lib' 'n');
 for localDir in "${localDirs[@]}"
 do
-  if [ -d $localDir ]; then
+  if [ -d /usr/local/$localDir ]; then
     echo "changing owner of $localDir"
-    sudo chown -R $USER $localDir
+    sudo chown -R $USER /usr/local/$localDir
     if [ $? == 0 ]; then
       echo "command executed: sudo chown $USER $localDir;"
       echo "changed owner of $localDir"
