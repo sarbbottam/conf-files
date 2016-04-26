@@ -50,3 +50,14 @@ do
     echo
   fi
 done
+
+# create .czrc to specify adapter for commitizen
+if [ ! -f ~/.czrc ]; then
+  echo "creating  ~/.czrc"
+  echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+  if [ $? == 0 ]; then
+    echo "command executed: echo '{ \"path\": \"cz-conventional-changelog\" }' > ~/.czrc"
+    echo "created ~/.czrc"
+    echo
+  fi
+fi

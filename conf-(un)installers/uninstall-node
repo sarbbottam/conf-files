@@ -1,5 +1,16 @@
 #!/bin/sh
 
+# create .czrc to specify adapter for commitizen
+if [ -f ~/.czrc ]; then
+  echo "removing  ~/.czrc"
+  rm -rf ~/.czrc
+  if [ $? == 0 ]; then
+    echo "command executed: rm -rf ~/.czrc"
+    echo "removed ~/.czrc"
+    echo
+  fi
+fi
+
 # uninstall awesome global node_modules
 nodeModules=('commitizen' 'cz-conventional-changelog' 'semantic-release-cli' 'greenkeeper' 'http-server'  'watch-and-rsync' 'yo' 'doctoc');
 for nodeModule in "${nodeModules[@]}"
