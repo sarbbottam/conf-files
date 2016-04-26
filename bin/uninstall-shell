@@ -28,6 +28,3 @@ do
     echo
   fi
 done
-
-# Invoke uninstall-node
-source $CURRENT_DIR/uninstall-node

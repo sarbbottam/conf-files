@@ -1,7 +1,5 @@
 #!/bin/sh
 
-CURRENT_DIR=`pwd`/`dirname "$0"`
-
 # Create ~/GitCorp directory, if not exists
 homeDirs=('GitCorp' 'Sites' 'Downloads' '.vim/view' '.vim/autoload' '.vim/bundle');
 for homeDir in "${homeDirs[@]}"
@@ -44,11 +42,11 @@ confDirNames=('common-shell-confs' 'bash-confs' 'zsh-confs' 'git-confs' 'vim-con
 for confDirName in "${confDirNames[@]}"
 do
   if [ -d ~/GitHub/conf-files/$confDirName ]; then
-    echo "creating SymLink ~/.$confDirName to $CURRENT_DIR/../$confDirName ~/.$confDirName"
-    ln -s  "$CURRENT_DIR/../$confDirName" ~/.$confDirName
+    echo "creating SymLink ~/.$confDirName to $CURRENT_DIR/$confDirName ~/.$confDirName"
+    ln -s  "$CURRENT_DIR/$confDirName" ~/.$confDirName
     if [ $? == 0 ]; then
-      echo "command executed: ln -s  $CURRENT_DIR/../$confDirName ~/.$confDirName"
-      echo "created SymLink ~/.$confDirName to $CURRENT_DIR/../$confDirName ~/.$confDirName"
+      echo "command executed: ln -s  $CURRENT_DIR/$confDirName ~/.$confDirName"
+      echo "created SymLink ~/.$confDirName to $CURRENT_DIR/$confDirName ~/.$confDirName"
       echo
     fi
   fi
@@ -66,6 +64,3 @@ do
     echo
   fi
 done
-
-# Invoke install-node
-source $CURRENT_DIR/install-node
