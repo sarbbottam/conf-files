@@ -1,6 +1,0 @@
-# Docker
-DOCKER_PORT=`boot2docker up &>/dev/null | grep DOCKER_HOST | cut -d ":" -f 3`
-eval "$(boot2docker shellinit)" 
-# Overwriting to localhost
-export DOCKER_HOST=tcp://127.0.0.1:$DOCKER_PORT
-export DOCKER_TLS_VERIFY=0
