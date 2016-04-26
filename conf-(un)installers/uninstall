@@ -1,5 +1,7 @@
 #!/bin/sh
 
+CURRENT_DIR=`dirname "$0"`
+
 existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.gitignore_global' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' '.vimrc');
 
 # Remove SymLinks
@@ -26,3 +28,6 @@ do
     echo
   fi
 done
+
+# Invoke uninstall-node
+source $CURRENT_DIR/uninstall-node
