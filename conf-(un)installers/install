@@ -24,7 +24,7 @@ if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
 fi
 
 # Backup existing files
-existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' 'gitignore_global' '.vimrc' '.screenrc' '.docker');
+existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' 'gitignore_global' '.vimrc' '.docker');
 for existingConfFileName in "${existingConfFileNames[@]}"
 do
   if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
