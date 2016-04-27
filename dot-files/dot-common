@@ -1,14 +1,14 @@
 # Invoke .aliases
-source ~/.common-shell-confs/aliases
+source ~/.dot-commons/aliases
 
 # Invoke .exports
-source ~/.common-shell-confs/exports
+source ~/.dot-commons/exports
 
 # Invoke .functions
-source ~/.common-shell-confs/functions
+source ~/.dot-commons/functions
 
 # Invoke .functions
-source ~/.common-shell-confs/ssh-auth-sock
+source ~/.dot-commons/ssh-auth-sock
 
 # Invoke travis.sh if available
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh

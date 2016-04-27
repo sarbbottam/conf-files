@@ -1,5 +1,5 @@
 # Invoke .commons
-source ~/.common-shell-confs/common
+source ~/.dot-common
 
 # Update PS1
 

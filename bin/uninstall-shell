@@ -1,30 +1,30 @@
 #!/bin/sh
 
-CURRENT_DIR=`dirname "$0"`
+dots=('dot-files' 'dot-commons' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 
-existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.gitignore_global' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' '.vimrc');
-
-# Remove SymLinks
-for existingConfFileName in "${existingConfFileNames[@]}"
+# remove symlinks
+for dot in "${dots[@]}"
 do
-  if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
-    echo "removing SymLink up ~/$existingConfFileName"
-    rm -rf ~/$existingConfFileName
-    echo "command executed: rm -rf ~/$existingConfFileName"
-    echo "removed SymLink up ~/$existingConfFileName"
-    echo
+  if [ -d ~/.$dot -o -f ~/.$dot -o -L ~/.$dot ]; then
+    echo "removing symlink ~/.$dot"
+    rm -rf ~/.$dot
+    if [ $? == 0 ]; then
+      echo "command executed: rm -rf ~/.$dot"
+      echo "removed symlink ~/.$dot"
+      echo
+    fi
   fi
 done
 
-# Get the existing files from backup
-for existingConfFileName in "${existingConfFileNames[@]}"
+# create dots from backup, if any
+for dot in "${dots[@]}"
 do
-  if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
-    modifiedConfFileName=$existingConfFileName-prev;
-    echo "renaming the previous conf file ~/$modifiedConfFileName to ~/$existingConfFileName"
-    mv ~/$modifiedConfFileName ~/$existingConfFileName
-    echo "command executed: mv ~/$modifiedConfFileName ~/$existingConfFileName"
-    echo "renamed the previous conf file ~/$modifiedConfFileName to ~/$existingConfFileName"
+  if [ -f ~/$dot -o -d ~/$dot -o -L ~/$dot ]; then
+    dotBackup=$dot-backup;
+    echo "renaming the previous conf file ~/$dotBackup to ~/$dot"
+    mv ~/$dotBackup ~/$dot
+    echo "command executed: mv ~/$dotBackup ~/$dot"
+    echo "renamed the previous conf file ~/$dotBackup to ~/$dot"
     echo
   fi
 done

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Create ~/GitCorp directory, if not exists
+# create GitCorp, Sites, Downloads, .vim/view, .vim/autoload, .vim/bundle, directories, if non existent
 homeDirs=('GitCorp' 'Sites' 'Downloads' '.vim/view' '.vim/autoload' '.vim/bundle');
 for homeDir in "${homeDirs[@]}"
 do
@@ -15,7 +15,7 @@ do
   fi
 done
 
-# Create ~/.vim/autoload/pathogen.vim, if not exists
+# create ~/.vim/autoload/pathogen.vim, if non existent
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
   echo "creating ~/.vim/autoload/pathogen.vim"
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
@@ -23,44 +23,44 @@ if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
   echo "created ~/.vim/autoload/pathogen.vim"
 fi
 
-# Backup existing files
-existingConfFileNames=('.common-shell-confs' '.bash-confs' '.zsh-confs' '.git-confs' '.vim-confs' '.bashrc' '.bash_profile' '.zshrc' '.zprofile' '.gitconfig' 'gitignore_global' '.vimrc');
-for existingConfFileName in "${existingConfFileNames[@]}"
+# backup existing files
+dots=('dot-files' 'dot-commons' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
+for dot in "${dots[@]}"
 do
-  if [ -f ~/$existingConfFileName -o -d ~/$existingConfFileName -o -L ~/$existingConfFileName ]; then
-    modifiedConfFileName=$existingConfFileName-prev;
-    echo "backing up  ~/$existingConfFileName as ~/$modifiedConfFileName"
-    mv ~/$existingConfFileName ~/$modifiedConfFileName
-    echo "command executed: mv ~/$existingConfFileName ~/$modifiedConfFileName"
-    echo "backed up  ~/$existingConfFileName as ~/$modifiedConfFileName"
+  if [ -f ~/$dot -o -d ~/$dot -o -L ~/$dot ]; then
+    dotBackup=$dot-backup;
+    echo "backing up  ~/$dot as ~/$dotBackup"
+    mv ~/$dot ~/$dotBackup
+    echo "command executed: mv ~/$dot ~/$dotBackup"
+    echo "backed up  ~/$dot as ~/$dotBackup"
     echo
   fi
 done
 
-# Create SymLinks
-confDirNames=('common-shell-confs' 'bash-confs' 'zsh-confs' 'git-confs' 'vim-confs');
-for confDirName in "${confDirNames[@]}"
+# create symlinks - directories
+dotDirs=('dot-files' 'dot-commons');
+for dotDir in "${dotDirs[@]}"
 do
-  if [ -d ~/GitHub/conf-files/$confDirName ]; then
-    echo "creating SymLink ~/.$confDirName to $CURRENT_DIR/$confDirName ~/.$confDirName"
-    ln -s  "$CURRENT_DIR/$confDirName" ~/.$confDirName
+  if [ -d $CURRENT_DIR/$dotDir ]; then
+    echo "creating SymLink ~/.$dotDir to $CURRENT_DIR/$dotDir ~/.$dotDir"
+    ln -s  "$CURRENT_DIR/$dotDir" ~/.$dotDir
     if [ $? == 0 ]; then
-      echo "command executed: ln -s  $CURRENT_DIR/$confDirName ~/.$confDirName"
-      echo "created SymLink ~/.$confDirName to $CURRENT_DIR/$confDirName ~/.$confDirName"
+      echo "command executed: ln -s  $CURRENT_DIR/$dotDir ~/.$dotDir"
+      echo "created SymLink ~/.$dotDir to $CURRENT_DIR/$dotDir ~/.$dotDir"
       echo
     fi
   fi
 done
 
-confFileNames=('.bash-confs/bashrc' '.bash-confs/bash_profile' '.zsh-confs/zshrc' '.zsh-confs/zprofile' '.git-confs/gitconfig' '.git-confs/gitignore_global' '.vim-confs/vimrc');
-for confFileName in "${confFileNames[@]}"
+# create symlinks - files
+dotFiles=('bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
+for dotFile in "${dotFiles[@]}"
 do
-  if [ -f ~/$confFileName ]; then
-    symLinkName=.`echo ~/$confFileName | sed ' s!.*/!! ; s/"$// '`
-    echo "creating SymLink ~/$symLinkName to ~/$confFileName"
-    ln -s  ~/$confFileName ~/$symLinkName
-    echo "command executed: ln -s  ~/$confFileName ~/$symLinkName"
-    echo "created SymLink ~/$symLinkName to ~/$confFileName"
+  if [ -f ~/.dot-files/$dotFile ]; then
+    echo "creating SymLink ~/.$dotFile to ~/.dot-files/$dotFile"
+    ln -s  ~/.dot-files/$dotFile ~/.$dotFile
+    echo "command executed: ln -s  ~/.dot-files/$dotFile ~/.$dotFile"
+    echo "created SymLink ~/.$dotFile to ~/.dot-files/$dotFile"
     echo
   fi
 done

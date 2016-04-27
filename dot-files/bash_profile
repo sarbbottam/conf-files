@@ -1,5 +1,5 @@
 # Invoke exports
-source ~/.common-shell-confs/exports
+source ~/.dot-commons/exports
 
 # Invoke .bashrc
 source ~/.bashrc

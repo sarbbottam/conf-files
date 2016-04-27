@@ -6,10 +6,10 @@ compinit -C
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Invoke .commons
-source ~/.common-shell-confs/common
+source ~/.dot-common
 
 # Invoke .history
-source ~/.zsh-confs/history
+source ~/.zhistory
 
 # Update PS1
 autoload -U colors && colors

@@ -1,4 +1,4 @@
-#  Basic bash, zsh, git, vim, screen configs.
+#  Basic bash, zsh, git, vim, node configurations.
 
 ## install:
 ```
