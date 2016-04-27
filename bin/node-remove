@@ -9,33 +9,35 @@ if [ -f ~/.czrc ]; then
 fi
 
 # uninstall awesome global node_modules
-printf "\nuninstalling node-modules globally\n"
-printf "it may take few minutes ...\n"
+printf "\n${BLUE}❯ uninstalling node-modules globally${NORMAL}\n"
+printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
 nodeModules="commitizen cz-conventional-changelog semantic-release-cli greenkeeper http-server watch-and-rsync yo doctoc"
 npm rm -g $nodeModules &>/dev/null
 if [ $? == 0 ]; then
-  printf "uninstalled $nodeModules globally\n"
+  printf "${GREEN}❯ uninstalled $nodeModules globally${NORMAL}\n"
 fi
 
 # uninstall node and n
-printf "\nsudo password might be required for removing n and node\n"
+printf "\n${BLUE}❯ removing /usr/local/bin{n, node}${NORMAL}${NORMAL}\n"
+printf "${YELLOW}❯ sudo password might be required for removing n and node${NORMAL}\n"
 bins=('/usr/local/bin/n' '/usr/local/bin/node');
 for bin in "${bins[@]}"
 do
   if [ -f $bin ]; then
     sudo rm -rf $bin;
     if [ $? == 0 ]; then
-      printf "removed $bin\n"
+      printf "${GREEN}❯ removed $bin${NORMAL}\n"
     fi
   fi
 done
 
 # delete /usr/local/n
-printf "\nsudo password might be required for removing $nDir\n"
+printf "\n${BLUE}❯ removing /usr/local/n ${NORMAL}${NORMAL}\n"
+printf "\n${YELLOW}❯ sudo password might be required for removing $nDir${NORMAL}\n"
 nDir='/usr/local/n'
 if [ -d $nDir ]; then
   sudo rm -rf $nDir;
   if [ $? == 0 ]; then
-    printf "removed $nDir\n"
+    printf "${GREEN}❯ removed $nDir${NORMAL}\n"
   fi
 fi

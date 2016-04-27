@@ -1,57 +1,60 @@
 #!/bin/sh
 
 # create GitCorp, Sites, Downloads, .vim/view, .vim/autoload, .vim/bundle, directories, if non existent
-printf "\ncreating home directories\n"
+printf "\n${BLUE}❯ creating home directories${NORMAL}\n"
 homeDirs=('GitCorp' 'Sites' 'Downloads' '.vim/view' '.vim/autoload' '.vim/bundle');
 for homeDir in "${homeDirs[@]}"
 do
   if [ ! -d ~/$homeDir ]; then
     mkdir -p ~/$homeDir
     if [ $? == 0 ]; then
-      printf "created ~/$homeDir\n"
+      printf "${GREEN}❯ created ~/$homeDir${NORMAL}\n"
     fi
   fi
 done
 
 # create ~/.vim/autoload/pathogen.vim, if non existent
-printf "\n"
+printf "\n${BLUE}❯ fetching pathogen.vim at ~/.vim/autoload/pathogen.vim${NORMAL}\n"
+printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
-  printf "fetching pathogen.vim at ~/.vim/autoload/pathogen.vim\n"
-  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
+  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim &>/dev/null
+  if [ $? == 0 ]; then
+    printf "${GREEN}❯ fetched pathogen.vim at ~/.vim/autoload/pathogen.vim${NORMAL}\n"
+  fi
 fi
 
 # backup existing files
-printf "\nbacking up dots, if any\n"
+printf "\n${BLUE}❯ backing up dots, if any${NORMAL}\n"
 dots=('dot-files' 'dot-commons' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 for dot in "${dots[@]}"
 do
   if [ -f ~/$dot -o -d ~/$dot -o -L ~/$dot ]; then
     dotBackup=$dot-backup;
     mv ~/$dot ~/$dotBackup
-    printf "backed up  ~/$dot as ~/$dotBackup\n"
+    printf "${GREEN}❯ backed up  ~/$dot as ~/$dotBackup${NORMAL}\n"
   fi
 done
 
 # create symlinks - directories
-printf "\ncreating symlink for dot-directories\n"
+printf "\n${BLUE}❯ creating symlink for dot-directories${NORMAL}\n"
 dotDirs=('dot-files' 'dot-commons');
 for dotDir in "${dotDirs[@]}"
 do
   if [ -d ~/GitHub/conf-files/$dotDir -a ! -L ~/.$dotDir ]; then
     ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir
     if [ $? == 0 ]; then
-      printf "created symlink ~/.$dotDir to ~/GitHub/conf-files/$dotDir\n"
+      printf "${GREEN}❯ created symlink ~/.$dotDir to ~/GitHub/conf-files/$dotDir${NORMAL}\n"
     fi
   fi
 done
 
 # create symlinks - files
-printf "\ncreating symlink for dot-files\n"
+printf "\n${BLUE}❯ creating symlink for dot-files${NORMAL}\n"
 dotFiles=('bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 for dotFile in "${dotFiles[@]}"
 do
   if [ -f ~/.dot-files/$dotFile -a ! -L ~/.dotFile ]; then
     ln -s  ~/.dot-files/$dotFile ~/.$dotFile
-    printf "created symlink ~/.$dotFile to ~/.dot-files/$dotFile\n"
+    printf "${GREEN}❯ created symlink ~/.$dotFile to ~/.dot-files/$dotFile${NORMAL}\n"
   fi
 done

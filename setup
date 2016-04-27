@@ -1,24 +1,48 @@
 #!/bin/sh
 
-if [ ! -d ~/GitHub ]; then
-  printf "\ncreating ~/GitHub directory\n"
-  mkdir ~/GitHub
+# use colors, but only if connected to a terminal, and that terminal
+# supports them.
+if which tput >/dev/null 2>&1; then
+  ncolors=$(tput colors)
+fi
+if [ -t 1 ] && [ -n "$ncolors" ] && [ "$ncolors" -ge 8 ]; then
+  RED="$(tput setaf 1)"
+  GREEN="$(tput setaf 2)"
+  YELLOW="$(tput setaf 3)"
+  BLUE="$(tput setaf 4)"
+  BOLD="$(tput bold)"
+  NORMAL="$(tput sgr0)"
+else
+  RED=""
+  GREEN=""
+  YELLOW=""
+  BLUE=""
+  BOLD=""
+  NORMAL=""
 fi
 
-printf "\ncloning $repos\n"
+if [ ! -d ~/GitHub ]; then
+  mkdir ~/GitHub
+  if [ $? == 0 ]; then
+    printf "\n${GREEN}❯ creating ~/GitHub directory${NORMAL}\n"
+  fi
+fi
+
+printf "\n${BLUE}❯ cloning repos${NORMAL}\n"
+printf "${YELLOW}❯ it may take few minutes ...\n"
 # repos=('conf-files' 'oh-my-zsh' 'bash-it')
 repos=('conf-files' 'oh-my-zsh')
 for repo in "${repos[@]}"
 do
   if [ ! -d ~/GitHub/$repo ]; then
-    git clone git@github.com:sarbbottam/$repo.git ~/GitHub/$repo
+    git clone git@github.com:sarbbottam/$repo.git ~/GitHub/$repo &>/dev/null
     if [ $? == 0 ]; then
-      printf "cloned at ~/GitHub/$repo\n"
+      printf "${GREEN}❯ cloned $repo at ~/GitHub/$repo${NORMAL}\n"
     fi
   fi
 done
 
-printf "\ncreating symlink for oh-mys\n"
+printf "\n${BLUE}❯ creating symlink for oh-mys${NORMAL}\n"
 # ohMys=('oh-my-zsh' 'bash-it');
 ohMys=('oh-my-zsh');
 for ohMy in "${ohMys[@]}"
@@ -26,12 +50,13 @@ do
   if [ -d ~/GitHub/$ohMy -a ! -L ~/.$ohMy ]; then
     ln -s  ~/GitHub/$ohMy ~/.$ohMy
     if [ $? == 0 ]; then
-      printf "created symlink ~/.$ohMy to ~/GitHub/$ohMy\n"
+      printf "${GREEN}❯ created symlink ~/.$ohMy to ~/GitHub/$ohMy${NORMAL}\n"
     fi
   fi
 done
 
 bins=('shell-customize' 'node-setup')
+# bins=('shell-customize')
 for bin in "${bins[@]}"
 do
   source ~/GitHub/conf-files/bin/$bin

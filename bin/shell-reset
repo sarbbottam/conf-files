@@ -3,24 +3,24 @@
 dots=('oh-my-zsh' 'bash-it' 'dot-files' 'dot-commons' 'vim/view' 'vim/autoload' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 
 # remove symlinks
-printf "\nremoving dot symlinks\n"
+printf "\n${BLUE}❯ removing dot symlinks${NORMAL}\n"
 for dot in "${dots[@]}"
 do
   if [ -d ~/.$dot -o -f ~/.$dot -o -L ~/.$dot ]; then
     rm -rf ~/.$dot
     if [ $? == 0 ]; then
-      printf "removed symlink ~/.$dot\n"
+      printf "${GREEN}❯ removed symlink ~/.$dot${NORMAL}\n"
     fi
   fi
 done
 
 # create dots from backup, if any
-printf "\nrestoring dots from backups, if any\n"
+printf "\n${BLUE}❯ restoring dots from backups, if any${NORMAL}\n"
 for dot in "${dots[@]}"
 do
   if [ -f ~/$dot -o -d ~/$dot -o -L ~/$dot ]; then
     dotBackup=$dot-backup;
     mv ~/$dotBackup ~/$dot
-    printf "renamed the previous conf file ~/$dotBackup to ~/$dot\n"
+    printf "${GREEN}❯ renamed the previous conf file ~/$dotBackup to ~/$dot${NORMAL}\n"
   fi
 done

@@ -2,50 +2,65 @@
 
 # create directory /usr/local/n
 # n needs this directory to store the installed node versions
-printf "\nsudo password might be required for creating $nDir\n"
 nDir='/usr/local/n/versions/'
+printf "\n${BLUE}❯ creating $nDir${NORMAL}\n"
+printf "${YELLOW}❯ sudo password might be required for creating $nDir${NORMAL}\n"
 if [ ! -d $nDir ]; then
   sudo mkdir -p $nDir;
   if [ $? == 0 ]; then
-    printf "created $nDir\n"
+    printf "${GREEN}❯ created $nDir${NORMAL}\n"
   fi
 fi
 
 # change owner of /usr/local/{bin,lib,n} to current user
 # to avoid installing global node_modules with sudo
-printf "\nsudo password might be required for changing owner of $localDir to $USER\n"
+printf "${BLUE}❯ creating /usr/local/{bin,lib,n}${NORMAL}\n"
+printf "\n${YELLOW}❯ sudo password might be required for changing owner of /usr/local/{bin,lib,n} to $USER${NORMAL}\n"
 localDirs=('bin' 'lib' 'n');
 for localDir in "${localDirs[@]}"
 do
   if [ -d /usr/local/$localDir ]; then
     sudo chown -R $USER /usr/local/$localDir
     if [ $? == 0 ]; then
-      printf "changed owner of /usr/local/$localDir to $USER\n"
+      printf "${GREEN}❯ changed owner of /usr/local/${localDir} to ${USER}${NORMAL}\n"
     fi
   fi
 done
 
 # fetch n from github and set the x flag on
-printf "\n"
+printf "\n${BLUE}❯ fetching n at ${nBin}${NORMAL}\n"
+printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
 nBin=/usr/local/bin/n
 if [ ! -f $nBin ]; then
-  printf "fetching n at $nBin\n"
-  curl -o $nBin https://raw.githubusercontent.com/sarbbottam/n/master/bin/n
+  curl -o $nBin https://raw.githubusercontent.com/sarbbottam/n/master/bin/n &>/dev/null
+  if [ $? == 0 ]; then
+    printf "${GREEN}❯ fetched n at ${nBin}${NORMAL}\n"
+  fi
 fi
 
-printf "setting +x for $nBin\n"
+printf "\n${BLUE}❯ setting +x for ${nBin}${NORMAL}\n"
 chmod 755 $nBin
+if [ $? == 0 ]; then
+  printf "${GREEN}❯ set +x for ${nBin}${NORMAL}\n"
+fi
 
 # install node
-n latest
+printf "\n${BLUE}❯ installing latest version of node${NORMAL}\n"
+printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
+n latest &>/dev/null
+if [ $? == 0 ]; then
+  printf "${GREEN}❯ installed latest version of node${NORMAL}\n"
+fi
 
 # install awesome global node_modules
-printf "\ninstalling node-modules globally\n"
-printf "it may take few minutes ...\n"
+printf "\n${BLUE}❯ installing node-modules globally${NORMAL}\n"
+printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
 nodeModules="commitizen cz-conventional-changelog semantic-release-cli greenkeeper http-server watch-and-rsync yo doctoc"
 npm i -g $nodeModules &>/dev/null
 if [ $? == 0 ]; then
-  printf "installed $nodeModules globally\n"
+  printf "${GREEN}❯ installed $nodeModules globally${NORMAL}\n"
+else
+  printf "${RED}❯ there have been some error while insalling node-modules globally, check out ./npm-debug.log${NORMAL}\n"
 fi
 
 # create .czrc to specify adapter for commitizen
