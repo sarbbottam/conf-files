@@ -1,22 +1,27 @@
-# Completions
-autoload -U compinit
-compinit -C
-
-# Case-insensitive (all),partial-word and then substring completion
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-# Invoke .commons
+# invoke .commons
 source ~/.dot-common
 
-# Invoke .history
+# invoke .history
 source ~/.zhistory
 
-# Update PS1
-autoload -U colors && colors
-setopt prompt_subst
+if [ -d ~/.oh-my-zsh ]; then
+  ZSH=~/.oh-my-zsh
+  ZSH_THEME="robbyrussell"
+  source $ZSH/oh-my-zsh.sh
+else
+  # completions
+  autoload -U compinit
+  compinit -C
 
-# ToDo - need to refactor
-function precmd() {
-  PROMPT="[$(shell)] %{$fg[cyan]%}%n%{$reset_color%} at %{$fg[white]%}%m%{$reset_color%} in %{$fg[green]%}%~ %{$fg[magenta]%}$(git-branch)$(git-status)%{$reset_color%}
-%{$fg[green]%}吽%{$reset_color%} "
-}
+  # case-insensitive (all),partial-word and then substring completion
+  zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+  # update PS1
+  autoload -U colors && colors
+  setopt prompt_subst
+
+  function precmd() {
+    PROMPT="[$(shell)] %{$fg[cyan]%}%n%{$reset_color%} at %{$fg[white]%}%m%{$reset_color%} in %{$fg[green]%}%~ %{$fg[magenta]%}$(git-branch)$(git-status)%{$reset_color%}
+  %{$fg[green]%}吽%{$reset_color%} "
+  }
+fi
