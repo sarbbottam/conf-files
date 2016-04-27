@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# setup terminal colors
+source ~/GitHub/conf-files/bin/colors
+
 # uninstall awesome global node_modules
 printf "\n${BLUE}❯ uninstalling node-modules globally${NORMAL}\n"
 printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# setup terminal colors
+source ~/GitHub/conf-files/bin/colors
+
 dots=('oh-my-zsh' 'bash-it' 'dot-files' 'dot-commons' 'vim/view' 'vim/autoload' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common' 'czrc');
 
 # remove symlinks

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# setup terminal colors
+source ~/GitHub/conf-files/bin/colors
+
 # create directory /usr/local/n
 # n needs this directory to store the installed node versions
 nDir='/usr/local/n/versions/'

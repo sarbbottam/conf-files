@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# setup terminal colors
+source ~/GitHub/conf-files/bin/colors
+
 # create GitCorp, Sites, Downloads, .vim/view, .vim/autoload, .vim/bundle, directories, if non existent
 printf "\n${BLUE}❯ creating home directories${NORMAL}\n"
 homeDirs=('GitCorp' 'Sites' 'Downloads' '.vim/view' '.vim/autoload' '.vim/bundle');
