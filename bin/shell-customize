@@ -41,12 +41,13 @@ done
 dotDirs=('dot-files' 'dot-commons');
 for dotDir in "${dotDirs[@]}"
 do
-  if [ -d $CURRENT_DIR/$dotDir ]; then
-    echo "creating SymLink ~/.$dotDir to $CURRENT_DIR/$dotDir ~/.$dotDir"
-    ln -s  "$CURRENT_DIR/$dotDir" ~/.$dotDir
+  if [ -d ~/GitHub/conf-files/$dotDir -a ! -L ~/.$dotDir ]; then
+    echo "creating SymLink ~/.$dotDir to ~/GitHub/conf-files/$dotDir ~/.$dotDir"
+    echo "command executed: ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir"
+    ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir
     if [ $? == 0 ]; then
-      echo "command executed: ln -s  $CURRENT_DIR/$dotDir ~/.$dotDir"
-      echo "created SymLink ~/.$dotDir to $CURRENT_DIR/$dotDir ~/.$dotDir"
+      echo "command executed: ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir"
+      echo "created SymLink ~/.$dotDir to ~/GitHub/conf-files/$dotDir ~/.$dotDir"
       echo
     fi
   fi
@@ -56,7 +57,7 @@ done
 dotFiles=('bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 for dotFile in "${dotFiles[@]}"
 do
-  if [ -f ~/.dot-files/$dotFile ]; then
+  if [ -f ~/.dot-files/$dotFile -a ! -L ~/.dotFile ]; then
     echo "creating SymLink ~/.$dotFile to ~/.dot-files/$dotFile"
     ln -s  ~/.dot-files/$dotFile ~/.$dotFile
     echo "command executed: ln -s  ~/.dot-files/$dotFile ~/.$dotFile"

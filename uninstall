@@ -1,5 +1,0 @@
-CURRENT_DIR=`pwd`/`dirname "$0"`
-
-# Invoke uninstallers
-source "$CURRENT_DIR/bin/shell-reset"
-source "$CURRENT_DIR/bin/node-remove"

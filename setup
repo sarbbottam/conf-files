@@ -1,0 +1,24 @@
+#!/bin/sh
+
+if [ ! -d ~/GitHub ]; then
+  echo 'creating GitHub directory'
+  mkdir ~/GitHub
+fi
+
+if [ ! -d ~/GitHub/conf-files ]; then
+  echo 'cloning conf-files'
+  git clone git@github.com:sarbbottam/conf-files.git ~/GitHub/conf-files
+fi
+
+if [ ! -d ~/GitHub/oh-my-zsh ]; then
+  echo 'cloning oh-my-zsh'
+  git clone git@github.com:robbyrussell/oh-my-zsh.git ~/GitHub/oh-my-zsh
+fi
+
+# if [ ! -d ~/GitHub/bash-it ]; then
+#   echo 'cloning bash-it'
+#   git clone git@github.com:bash-it/bash-it.git ~/GitHub/bash-it
+# fi
+
+source ~/GitHub/conf-files/bin/shell-customize
+source ~/GitHub/conf-files/bin/node-setup

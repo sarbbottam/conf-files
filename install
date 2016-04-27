@@ -1,5 +1,0 @@
-CURRENT_DIR=`pwd`/`dirname "$0"`
-
-# Invoke installers
-source "$CURRENT_DIR/bin/shell-customize"
-source "$CURRENT_DIR/bin/node-setup"

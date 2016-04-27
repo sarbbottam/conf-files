@@ -1,0 +1,19 @@
+#!/bin/sh
+
+source ~/GitHub/conf-files/bin/node-remove
+source ~/GitHub/conf-files/bin/shell-reset
+
+if [ -d ~/GitHub/oh-my-zsh ]; then
+  echo 'removing oh-my-zsh'
+  rm -rf ~/GitHub/oh-my-zsh
+fi
+
+# if [ -d ~/GitHub/bash-it ]; then
+#   echo 'removing bash-it'
+#   rm -rf ~/GitHub/bash-it
+# fi
+
+# if [ -d ~/GitHub/conf-files ]; then
+#   echo 'removing conf-files'
+#   rm -rf ~/GitHub/conf-files
+# fi

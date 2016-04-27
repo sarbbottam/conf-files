@@ -1,14 +1,13 @@
-#  Basic bash, zsh, git, vim, node configurations.
+#  setup node and customize bash, zsh, git, vim
+
+> make sure `git` is installed, otherwise [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 ## install:
 ```
-cd ~ && which git && mkdir GitHub && cd $_ && git clone git@github.com:sarbbottam/conf-files.git \
-&& sh conf-files/install
+curl -L https://raw.githubusercontent.com/sarbbottam/conf-files/master/setup | sh
 ```
-
-If `git not found` error is displayed, [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 ## unistall is desired:
 ```
-cd ~/GitHub && sh conf-files/uninstall
+curl -L https://raw.githubusercontent.com/sarbbottam/conf-files/master/remove | sh
 ```
