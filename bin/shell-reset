@@ -1,6 +1,6 @@
 #!/bin/sh
 
-dots=('oh-my-zsh' 'bash-it' 'dot-files' 'dot-commons' 'vim/view' 'vim/autoload' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
+dots=('oh-my-zsh' 'bash-it' 'dot-files' 'dot-commons' 'vim/view' 'vim/autoload' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common' 'czrc');
 
 # remove symlinks
 printf "\n${BLUE}❯ removing dot symlinks${NORMAL}\n"

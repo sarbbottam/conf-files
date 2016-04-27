@@ -62,11 +62,3 @@ if [ $? == 0 ]; then
 else
   printf "${RED}❯ there have been some error while insalling node-modules globally, check out ./npm-debug.log${NORMAL}\n"
 fi
-
-# create .czrc to specify adapter for commitizen
-if [ ! -f ~/.czrc ]; then
-  echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
-  if [ $? == 0 ]; then
-    printf "\ncreated ~/.czrc\n"
-  fi
-fi

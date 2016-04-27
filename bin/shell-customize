@@ -25,7 +25,7 @@ fi
 
 # backup existing files
 printf "\n${BLUE}❯ backing up dots, if any${NORMAL}\n"
-dots=('dot-files' 'dot-commons' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
+dots=('dot-files' 'dot-commons' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common' 'czrc');
 for dot in "${dots[@]}"
 do
   if [ -f ~/$dot -o -d ~/$dot -o -L ~/$dot ]; then
@@ -50,7 +50,7 @@ done
 
 # create symlinks - files
 printf "\n${BLUE}❯ creating symlink for dot-files${NORMAL}\n"
-dotFiles=('bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
+dotFiles=('bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common' 'czrc');
 for dotFile in "${dotFiles[@]}"
 do
   if [ -f ~/.dot-files/$dotFile -a ! -L ~/.dotFile ]; then
