@@ -2,50 +2,40 @@
 
 # create .czrc to specify adapter for commitizen
 if [ -f ~/.czrc ]; then
-  echo "removing  ~/.czrc"
   rm -rf ~/.czrc
   if [ $? == 0 ]; then
-    echo "command executed: rm -rf ~/.czrc"
-    echo "removed ~/.czrc"
-    echo
+    printf "\nremoved ~/.czrc\n"
   fi
 fi
 
 # uninstall awesome global node_modules
-nodeModules=('commitizen' 'cz-conventional-changelog' 'semantic-release-cli' 'greenkeeper' 'http-server'  'watch-and-rsync' 'yo' 'doctoc');
-for nodeModule in "${nodeModules[@]}"
-do
-  echo "uninstalling $nodeModule globally"
-  npm rm -g $nodeModule
-  if [ $? == 0 ]; then
-    echo "command executed: npm rm -g $nodeModule"
-    echo "uninstalled $nodeModule globally"
-    echo
-  fi
-done
+printf "\nuninstalling node-modules globally\n"
+printf "it may take few minutes ...\n"
+nodeModules="commitizen cz-conventional-changelog semantic-release-cli greenkeeper http-server watch-and-rsync yo doctoc"
+npm rm -g $nodeModules &>/dev/null
+if [ $? == 0 ]; then
+  printf "uninstalled $nodeModules globally\n"
+fi
 
 # uninstall node and n
+printf "\nsudo password might be required for removing n and node\n"
 bins=('/usr/local/bin/n' '/usr/local/bin/node');
 for bin in "${bins[@]}"
 do
   if [ -f $bin ]; then
-    echo "removing $bin"
     sudo rm -rf $bin;
     if [ $? == 0 ]; then
-      echo "command executed: sudo rm -rf $bin;"
-      echo "removed $bin"
-      echo
+      printf "removed $bin\n"
     fi
   fi
 done
 
 # delete /usr/local/n
+printf "\nsudo password might be required for removing $nDir\n"
 nDir='/usr/local/n'
 if [ -d $nDir ]; then
-  echo "removing $nDir"
   sudo rm -rf $nDir;
   if [ $? == 0 ]; then
-    echo "command executed: rm -rf $nDir;"
-    echo "removed $nDir"
+    printf "removed $nDir\n"
   fi
 fi

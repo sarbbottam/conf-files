@@ -2,62 +2,56 @@
 
 # create directory /usr/local/n
 # n needs this directory to store the installed node versions
+printf "\nsudo password might be required for creating $nDir\n"
 nDir='/usr/local/n/versions/'
 if [ ! -d $nDir ]; then
-  echo "creating $nDir"
   sudo mkdir -p $nDir;
   if [ $? == 0 ]; then
-    echo "command executed: sudo mkdir $nDir;"
-    echo "created $nDir"
+    printf "created $nDir\n"
   fi
 fi
 
 # change owner of /usr/local/{bin,lib,n} to current user
 # to avoid installing global node_modules with sudo
+printf "\nsudo password might be required for changing owner of $localDir to $USER\n"
 localDirs=('bin' 'lib' 'n');
 for localDir in "${localDirs[@]}"
 do
   if [ -d /usr/local/$localDir ]; then
-    echo "changing owner of $localDir"
     sudo chown -R $USER /usr/local/$localDir
     if [ $? == 0 ]; then
-      echo "command executed: sudo chown $USER $localDir;"
-      echo "changed owner of $localDir"
-      echo
+      printf "changed owner of /usr/local/$localDir to $USER\n"
     fi
   fi
 done
 
 # fetch n from github and set the x flag on
+printf "\n"
 nBin=/usr/local/bin/n
-echo "fetching n"
-curl -o $nBin https://raw.githubusercontent.com/sarbbottam/n/master/bin/n
-echo "setting on the x flag"
+if [ ! -f $nBin ]; then
+  printf "fetching n at $nBin\n"
+  curl -o $nBin https://raw.githubusercontent.com/sarbbottam/n/master/bin/n
+fi
+
+printf "setting +x for $nBin\n"
 chmod 755 $nBin
 
 # install node
 n latest
 
 # install awesome global node_modules
-nodeModules=('commitizen' 'cz-conventional-changelog' 'semantic-release-cli' 'greenkeeper' 'http-server'  'watch-and-rsync' 'yo' 'doctoc');
-for nodeModule in "${nodeModules[@]}"
-do
-  echo "installing $nodeModule globally"
-  npm i -g $nodeModule
-  if [ $? == 0 ]; then
-    echo "command executed: npm i -g $nodeModule"
-    echo "installed $nodeModule globally"
-    echo
-  fi
-done
+printf "\ninstalling node-modules globally\n"
+printf "it may take few minutes ...\n"
+nodeModules="commitizen cz-conventional-changelog semantic-release-cli greenkeeper http-server watch-and-rsync yo doctoc"
+npm i -g $nodeModules &>/dev/null
+if [ $? == 0 ]; then
+  printf "installed $nodeModules globally\n"
+fi
 
 # create .czrc to specify adapter for commitizen
 if [ ! -f ~/.czrc ]; then
-  echo "creating  ~/.czrc"
   echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
   if [ $? == 0 ]; then
-    echo "command executed: echo '{ \"path\": \"cz-conventional-changelog\" }' > ~/.czrc"
-    echo "created ~/.czrc"
-    echo
+    printf "\ncreated ~/.czrc\n"
   fi
 fi

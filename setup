@@ -1,24 +1,25 @@
 #!/bin/sh
 
 if [ ! -d ~/GitHub ]; then
-  echo 'creating GitHub directory'
+  printf "\ncreating ~/GitHub directory\n"
   mkdir ~/GitHub
 fi
 
-if [ ! -d ~/GitHub/conf-files ]; then
-  echo 'cloning conf-files'
-  git clone git@github.com:sarbbottam/conf-files.git ~/GitHub/conf-files
-fi
+printf "\ncloning $repos\n"
+# repos=('conf-files' 'oh-my-zsh' 'bash-it')
+repos=('conf-files' 'oh-my-zsh')
+for repo in "${repos[@]}"
+do
+  if [ ! -d ~/GitHub/$repo ]; then
+    git clone git@github.com:sarbbottam/$repo.git ~/GitHub/$repo
+    if [ $? == 0 ]; then
+      printf "cloned at ~/GitHub/$repo\n"
+    fi
+  fi
+done
 
-if [ ! -d ~/GitHub/oh-my-zsh ]; then
-  echo 'cloning oh-my-zsh'
-  git clone git@github.com:robbyrussell/oh-my-zsh.git ~/GitHub/oh-my-zsh
-fi
-
-# if [ ! -d ~/GitHub/bash-it ]; then
-#   echo 'cloning bash-it'
-#   git clone git@github.com:bash-it/bash-it.git ~/GitHub/bash-it
-# fi
-
-source ~/GitHub/conf-files/bin/shell-customize
-source ~/GitHub/conf-files/bin/node-setup
+bins=('shell-customize' 'node-setup')
+for bin in "${bins[@]}"
+do
+  source ~/GitHub/conf-files/bin/$bin
+done

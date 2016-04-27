@@ -1,67 +1,57 @@
 #!/bin/sh
 
 # create GitCorp, Sites, Downloads, .vim/view, .vim/autoload, .vim/bundle, directories, if non existent
+printf "\ncreating home directories\n"
 homeDirs=('GitCorp' 'Sites' 'Downloads' '.vim/view' '.vim/autoload' '.vim/bundle');
 for homeDir in "${homeDirs[@]}"
 do
   if [ ! -d ~/$homeDir ]; then
-    echo "creating ~/$homeDir"
     mkdir -p ~/$homeDir
     if [ $? == 0 ]; then
-      echo "command executed: mkdir -p ~/$homeDir;"
-      echo "created -p ~/$homeDir"
-      echo
+      printf "created ~/$homeDir\n"
     fi
   fi
 done
 
 # create ~/.vim/autoload/pathogen.vim, if non existent
+printf "\n"
 if [ ! -f ~/.vim/autoload/pathogen.vim ]; then
-  echo "creating ~/.vim/autoload/pathogen.vim"
+  printf "fetching pathogen.vim at ~/.vim/autoload/pathogen.vim\n"
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;
-  echo "command executed: curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim;"
-  echo "created ~/.vim/autoload/pathogen.vim"
 fi
 
 # backup existing files
+printf "\nbacking up dots, if any\n"
 dots=('dot-files' 'dot-commons' 'bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 for dot in "${dots[@]}"
 do
   if [ -f ~/$dot -o -d ~/$dot -o -L ~/$dot ]; then
     dotBackup=$dot-backup;
-    echo "backing up  ~/$dot as ~/$dotBackup"
     mv ~/$dot ~/$dotBackup
-    echo "command executed: mv ~/$dot ~/$dotBackup"
-    echo "backed up  ~/$dot as ~/$dotBackup"
-    echo
+    printf "backed up  ~/$dot as ~/$dotBackup\n"
   fi
 done
 
 # create symlinks - directories
+printf "\ncreating symlink for dot-directories\n"
 dotDirs=('dot-files' 'dot-commons');
 for dotDir in "${dotDirs[@]}"
 do
   if [ -d ~/GitHub/conf-files/$dotDir -a ! -L ~/.$dotDir ]; then
-    echo "creating SymLink ~/.$dotDir to ~/GitHub/conf-files/$dotDir ~/.$dotDir"
-    echo "command executed: ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir"
     ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir
     if [ $? == 0 ]; then
-      echo "command executed: ln -s  ~/GitHub/conf-files/$dotDir ~/.$dotDir"
-      echo "created SymLink ~/.$dotDir to ~/GitHub/conf-files/$dotDir ~/.$dotDir"
-      echo
+      printf "created symlink ~/.$dotDir to ~/GitHub/conf-files/$dotDir\n"
     fi
   fi
 done
 
 # create symlinks - files
+printf "\ncreating symlink for dot-files\n"
 dotFiles=('bashrc' 'bash_profile' 'zshrc' 'zprofile' 'zhistory' 'gitconfig' 'gitignore_global' 'vimrc' 'dot-common');
 for dotFile in "${dotFiles[@]}"
 do
   if [ -f ~/.dot-files/$dotFile -a ! -L ~/.dotFile ]; then
-    echo "creating SymLink ~/.$dotFile to ~/.dot-files/$dotFile"
     ln -s  ~/.dot-files/$dotFile ~/.$dotFile
-    echo "command executed: ln -s  ~/.dot-files/$dotFile ~/.$dotFile"
-    echo "created SymLink ~/.$dotFile to ~/.dot-files/$dotFile"
-    echo
+    printf "created symlink ~/.$dotFile to ~/.dot-files/$dotFile\n"
   fi
 done
