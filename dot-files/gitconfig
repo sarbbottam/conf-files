@@ -40,6 +40,8 @@
   rmlocal = branch -D
   rmremote = push origin --delete
 
+  annihilate = "!f() { git branch -D \"$1\"; git push origin --delete \"$1\"; }; f"
+
   aliases = config --get-regexp alias
   tolast = commit --amend -C HEAD
 
