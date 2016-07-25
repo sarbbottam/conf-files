@@ -12,12 +12,6 @@ export NODE_PATH='/usr/local/lib/node_modules'
 # Editor
 export EDITOR=vim
 
-# Git
-export GIT_EDITOR=vim
-
-# SVN
-export SVN_EDITOR=vim
-
 # Customize ls color
 export CLICOLOR=1
 # a = black
