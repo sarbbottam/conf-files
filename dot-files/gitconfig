@@ -6,7 +6,6 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore_global
-  pager = cat
 [push]
   default = matching
   followTags = true
