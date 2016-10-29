@@ -1,0 +1,17 @@
+# setup terminal colors
+source ~/GitHub/conf-files/bin/colors
+
+printf "\n${BLUE}❯ fetching installing rvm at ~/.rvm\n"
+printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+printf "\n${BLUE}❯ symlinking ~/.rvm to /usr/local/rvm\n"
+printf "${YELLOW}❯ sudo password might be required to symlink ~/.rvm to /usr/local/rvm${NORMAL}\n"
+sudo ln -s  ~/.rvm/ /usr/local/rmv
+
+printf "\n${BLUE}❯ removing ~/.profile created during rmv installation${NORMAL}\n"
+rm -rf ~/.profile
+
+printf "\n${BLUE}❯ install bundler\n"
+printf "${YELLOW}❯ sudo password might be required${NORMAL}\n"
+sudo gem install bundler

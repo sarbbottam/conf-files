@@ -55,7 +55,7 @@ do
   fi
 done
 
-bins=('shell-customize' 'node-setup')
+bins=('shell-customize' 'node-setup' 'ruby-setup')
 # bins=('shell-customize')
 for bin in "${bins[@]}"
 do

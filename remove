@@ -21,7 +21,7 @@ else
   NORMAL=""
 fi
 
-bins=('node-remove' 'shell-reset')
+bins=('ruby-remove' 'node-remove' 'shell-reset')
 # bins=('shell-reset')
 for bin in "${bins[@]}"
 do

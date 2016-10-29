@@ -1,0 +1,13 @@
+# setup terminal colors
+source ~/GitHub/conf-files/bin/colors
+
+printf "\n${BLUE}❯ removing all rubies, gemset ...\n"
+printf "${YELLOW}❯ sudo password might be required to remove /usr/local/rvm${NORMAL}\n"
+sudo rvm remove all
+
+printf "\n${BLUE}❯ removing symlink /usr/local/rvm\n"
+printf "${YELLOW}❯ sudo password might be required to remove /usr/local/rvm${NORMAL}\n"
+sudo rm -rf /usr/local/rmv
+
+printf "\n${BLUE}❯ removing ~/.rvm\n"
+sudo rm -rf ~/.rvm
