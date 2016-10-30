@@ -7,7 +7,7 @@
   autocrlf = input
   excludesfile = ~/.gitignore_global
 [push]
-  default = matching
+  default = current
   followTags = true
 [alias]
   cl = clone
