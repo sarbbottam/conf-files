@@ -67,4 +67,6 @@ PATH=$ADB:$PATH
 export LOCAL_NODE_BINARIES='./node_modules/.bin'
 PATH=$PATH:$LOCAL_NODE_BINARIES:
 
+export PATH="$HOME/.yarn/bin:$PATH"
+
 export PATH
