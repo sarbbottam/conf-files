@@ -1,5 +1,5 @@
-# Invoke exports
-source ~/.dot-commons/exports
-
 # Invoke .bashrc
 source ~/.bashrc
+
+# Invoke .path
+source ~/.dot-commons/path

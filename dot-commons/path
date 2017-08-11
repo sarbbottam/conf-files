@@ -1,0 +1,37 @@
+# mysql
+MYSQL=/usr/local/mysql/bin
+PATH=$PATH:$MYSQL
+
+# mongodb
+MONGODB=/usr/local/mongodb/bin
+PATH=$PATH:$MONGODB
+
+# heroku
+HEROKU=/usr/local/heroku/bin
+PATH=$PATH:$HEROKU
+
+# Jmeter
+JMETER_HOME=/usr/local/lib/apache-jmeter
+JMETER=$JMETER_HOME/bin
+PATH=$PATH:$JMETER
+
+# Maven
+M2_HOME=/usr/local/lib/apache-maven
+M2=$M2_HOME/bin
+PATH=$PATH:$M2
+
+# Java
+JAVA_HOME=$(/usr/libexec/java_home)
+JAVA=$JAVA_HOME/bin
+PATH=$PATH:$JAVA
+
+# ADB
+ADB='/Applications/Android Studio.app/sdk/platform-tools'
+PATH=$PATH:$ADB
+
+# ./node_modules/.bin
+LOCAL_NODE_BINARIES='./node_modules/.bin'
+PATH=$PATH:$LOCAL_NODE_BINARIES
+
+# yarn
+PATH=$PATH:$HOME/.yarn/bin

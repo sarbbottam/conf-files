@@ -1,11 +1,3 @@
-# Update PATH
-#   for mysql
-PATH=$PATH:/usr/local/mysql/bin
-#   for mongodb
-PATH=$PATH:/usr/local/mongodb/bin
-# for heroku
-PATH=$PATH:/usr/local/heroku/bin:
-
 # Node
 export NODE_PATH='/usr/local/lib/node_modules'
 
@@ -43,30 +35,3 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
   source ~/.common-shell-confs/ssh-auth-sock
   export_ssh_auth_sock
 fi
-
-# Jmeter
-export JMETER_HOME=/usr/local/lib/apache-jmeter
-export JMETER=$JMETER_HOME/bin
-PATH=$PATH:$JMETER
-
-# Maven
-export M2_HOME=/usr/local/lib/apache-maven
-export M2=$M2_HOME/bin
-PATH=$PATH:$M2
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
-export JAVA=$JAVA_HOME/bin
-PATH=$PATH:$JAVA
-
-# ADB
-export ADB='/Applications/Android Studio.app/sdk/platform-tools'
-PATH=$ADB:$PATH
-
-# ./node_modules/.bin
-export LOCAL_NODE_BINARIES='./node_modules/.bin'
-PATH=$PATH:$LOCAL_NODE_BINARIES:
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
-export PATH
