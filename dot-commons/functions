@@ -38,7 +38,10 @@ function clone-rb() {
   pattern="^[0-9]+$"
   if [[ $1 =~ $pattern ]] ; then
     url="https://$RB_HOST/r/$1/diff/raw/"
-    git checkout -b "rb-$1";
+    git checkout -b "rb-$1"
+    if [ $? != 0 ] ; then
+      return 1;
+    fi
     filename="rb-$1.patch";
     curl -o $filename $url;
     git apply "$filename";
