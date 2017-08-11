@@ -1,5 +1,2 @@
-# Invoke .zshrc
-source ~/.zshrc
-
 # Invoke .path
 source ~/.dot-commons/path
