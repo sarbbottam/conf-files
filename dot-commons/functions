@@ -34,6 +34,21 @@ function clone-pr() {
   fi
 }
 
+function clone-rb() {
+  pattern="^[0-9]+$"
+  if [[ $1 =~ $pattern ]] ; then
+    url="https://$RB_HOST/r/$1/diff/raw/"
+    git checkout -b "rb-$1";
+    filename="rb-$1.patch";
+    curl -o $filename $url;
+    git apply "$filename";
+    rm -rf $filename
+    git commit -am "applied $filename"
+  else
+    echo "review board id must be a positive number";
+  fi
+}
+
 function shell() {
   ps | grep $$ | grep -v grep | awk '{print $4}' | sed -e 's/^.*\/bin\///g' -e 's/\-//g'
 }
