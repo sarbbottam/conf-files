@@ -44,8 +44,6 @@
   aliases = config --get-regexp alias
   tolast = commit --amend -C HEAD
 
-  corp = config --local user.email "sarbbo@yahoo-inc.com"
-
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f

@@ -10,5 +10,8 @@ source ~/.dot-commons/functions
 # Invoke .functions
 source ~/.dot-commons/ssh-auth-sock
 
+# Invoke .work
+source ~/.dot-commons/work
+
 # Invoke travis.sh if available
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
