@@ -45,8 +45,9 @@ function clone-rb() {
     filename="rb-$1.patch";
     curl -o $filename $url;
     git apply "$filename";
-    rm -rf $filename
-    git commit -am "applied $filename"
+    rm -rf $filename;
+    git add .;
+    git commit -m "applied $filename";
   else
     echo "review board id must be a positive number";
   fi
