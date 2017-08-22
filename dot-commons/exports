@@ -32,6 +32,6 @@ export GREP_OPTIONS='--color=auto'
 # Only for Linux
 if [[ $OSTYPE == "linux-gnu" ]]; then
   # ssh
-  source ~/.common-shell-confs/ssh-auth-sock
+  source ~/.dot-commons/ssh-auth-sock
   export_ssh_auth_sock
 fi
