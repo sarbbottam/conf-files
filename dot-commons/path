@@ -20,14 +20,16 @@ M2_HOME=/usr/local/lib/apache-maven
 M2=$M2_HOME/bin
 PATH=$PATH:$M2
 
-# Java
-JAVA_HOME=$(/usr/libexec/java_home)
-JAVA=$JAVA_HOME/bin
-PATH=$PATH:$JAVA
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  # Java
+  JAVA_HOME=$(/usr/libexec/java_home)
+  JAVA=$JAVA_HOME/bin
+  PATH=$PATH:$JAVA
 
-# ADB
-ADB='/Applications/Android Studio.app/sdk/platform-tools'
-PATH=$PATH:$ADB
+  # ADB
+  ADB='/Applications/Android Studio.app/sdk/platform-tools'
+  PATH=$PATH:$ADB
+fi
 
 # ./node_modules/.bin
 LOCAL_NODE_BINARIES='./node_modules/.bin'
