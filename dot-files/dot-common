@@ -7,8 +7,12 @@ source ~/.dot-commons/exports
 # Invoke .functions
 source ~/.dot-commons/functions
 
-# Invoke .functions
-source ~/.dot-commons/ssh-auth-sock
+# Only for Linux
+if [[ $OSTYPE == "linux-gnu" ]]; then
+  # ssh
+  source ~/.dot-commons/ssh-auth-sock
+  export_ssh_auth_sock
+fi
 
 # Invoke .work
 source ~/.dot-commons/work

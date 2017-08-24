@@ -28,10 +28,3 @@ export LSCOLORS="fxbxcxdxcxegedabagfgfh"
 
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
-
-# Only for Linux
-if [[ $OSTYPE == "linux-gnu" ]]; then
-  # ssh
-  source ~/.dot-commons/ssh-auth-sock
-  export_ssh_auth_sock
-fi
