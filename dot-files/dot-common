@@ -10,8 +10,8 @@ source ~/.dot-commons/functions
 # Only for Linux
 if [[ $OSTYPE == "linux-gnu" ]]; then
   # ssh
-  source ~/.dot-commons/ssh-auth-sock
-  export_ssh_auth_sock
+  source ~/.ssh-find-agent/ssh-find-agent.sh
+  ssh-find-agent -a
 fi
 
 # Invoke .work

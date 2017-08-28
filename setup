@@ -31,7 +31,7 @@ fi
 printf "\n${BLUE}❯ cloning repos${NORMAL}\n"
 printf "${YELLOW}❯ it may take few minutes ...\n"
 # repos=('conf-files' 'oh-my-zsh' 'bash-it')
-repos=('conf-files' 'oh-my-zsh')
+repos=('conf-files' 'oh-my-zsh' 'ssh-find-agent')
 for repo in "${repos[@]}"
 do
   if [ ! -d ~/GitHub/$repo ]; then
@@ -44,7 +44,7 @@ done
 
 printf "\n${BLUE}❯ creating symlink for oh-mys${NORMAL}\n"
 # ohMys=('oh-my-zsh' 'bash-it');
-ohMys=('oh-my-zsh');
+ohMys=('oh-my-zsh' 'ssh-find-agent');
 for ohMy in "${ohMys[@]}"
 do
   if [ -d ~/GitHub/$ohMy -a ! -L ~/.$ohMy ]; then
