@@ -1,4 +1,4 @@
-# Aliases
+# aliases
 alias ll='ls -lrt'
 alias lh='ls -lh'
 alias op='open'
@@ -15,20 +15,11 @@ alias szp='so ~/.zprofile'
 alias szr='so ~/.zshrc'
 
 alias tree='find . -print | sed -e '\''s;[^/]*/;|____;g;s;____|; |;g'\'''
-alias rd='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --remote-debugging-port=9222'
-alias rmds='find . -name "*.DS_Store" -type f -delete'
-alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/iOS\ Simulator.app'
-alias apache='sudo apachectl'
 alias ip='ifconfig | grep broadcast | grep inet | cut -d" " -f2'
 
-alias qtp='open -a "quicktime player"'
-alias vlc='open -a vlc'
+alias rmds='find . -name "*.DS_Store" -type f -delete'
+
 alias ..='cd ..'
 alias .-='cd -'
 
-alias syncpages='git checkout gh-pages; git rebase master; git checkout master'
-
 alias startssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
-
-alias syncprotostart='launchctl load /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
-alias syncprotostop='launchctl unload /Users/sarbbo/GitHub/conf-files/remote-sync/prototypes.plist'
