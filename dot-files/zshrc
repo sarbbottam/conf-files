@@ -10,7 +10,7 @@ if [ -d ~/.oh-my-zsh ]; then
   # ZSH_THEME="agnoster"
   DEFAULT_USER=$USER
   source $ZSH/oh-my-zsh.sh
-  PROMPT='%{$fg[yellow]%}[%M] %{$reset_color%}'$PROMPT
+  PROMPT='%{$fg[yellow]%}[%m] %{$reset_color%}'$PROMPT
 else
   # completions
   autoload -U compinit
