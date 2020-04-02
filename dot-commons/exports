@@ -28,3 +28,5 @@ export LSCOLORS="fxbxcxdxcxegedabagfgfh"
 
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
+
+export NLS_LANG=American_America.UTF8

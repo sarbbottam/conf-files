@@ -28,3 +28,5 @@ else
   %{$fg[green]%}吽%{$reset_color%} "
   }
 fi
+
+setopt COMPLETE_IN_WORD
