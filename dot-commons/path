@@ -40,6 +40,8 @@ PATH=$PATH:$HOME/.yarn/bin
 
 PATH=$PATH:$HOME/bin
 
+PATH=$PATH:/usr/bin
+
 if [[ $OSTYPE == "linux-gnu" ]]; then
   export JAVA_HOME=/export/apps/jdk/JDK-1_8_0_121
   export JDK_HOME=/export/apps/jdk/JDK-1_8_0_121

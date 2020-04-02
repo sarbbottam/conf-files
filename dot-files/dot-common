@@ -21,6 +21,9 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
   fi
 fi
 
+# Invoke .path
+source ~/.dot-commons/path
+
 # Invoke .work
 source ~/.dot-commons/work
 

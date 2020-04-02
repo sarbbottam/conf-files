@@ -58,7 +58,7 @@ fi
 # install awesome global node_modules
 printf "\n${BLUE}❯ installing node-modules globally${NORMAL}\n"
 printf "${YELLOW}❯ it may take few minutes ...${NORMAL}\n"
-nodeModules="commitizen cz-conventional-changelog semantic-release-cli greenkeeper http-server watch-and-rsync yo doctoc"
+nodeModules="commitizen cz-conventional-changelog"
 npm i -g $nodeModules &>/dev/null
 if [ $? == 0 ]; then
   printf "${GREEN}❯ installed $nodeModules globally${NORMAL}\n"

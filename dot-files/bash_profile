@@ -1,5 +1,2 @@
-# Invoke .path
-source ~/.dot-commons/path
-
 # Invoke .bashrc
 source ~/.bashrc
