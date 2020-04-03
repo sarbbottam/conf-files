@@ -32,3 +32,7 @@ alias stopsyncsa='watch-and-rsync -o=stop -c=~/GitHub/conf-files/dot-work/rsync-
 
 alias startflock='python scripts/flock-ui-dev.py --noserver'
 alias stopflock="lsof -i :1340 | tail -1 | awk '{print $2}' | xargs kill -9"
+
+alias sethosts="sudo rm -rf /etc/hosts && sudo ln -s  ~/.etc/hosts /etc/hosts"
+alias sethostsld1="sudo rm -rf /etc/hosts && sudo ln -s  ~/.etc/hosts-ld1 /etc/hosts"
+alias sethostsld2="sudo rm -rf /etc/hosts && sudo ln -s  ~/.etc/hosts-ld2 /etc/hosts"

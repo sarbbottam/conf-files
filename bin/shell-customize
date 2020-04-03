@@ -40,7 +40,7 @@ done
 
 # create symlinks - directories
 printf "\n${BLUE}❯ creating symlink for dot-directories${NORMAL}\n"
-dotDirs=('dot-files' 'dot-commons');
+dotDirs=('dot-files' 'dot-commons' 'etc');
 for dotDir in "${dotDirs[@]}"
 do
   if [ -d ~/GitHub/conf-files/$dotDir -a ! -L ~/.$dotDir ]; then
