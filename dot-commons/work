@@ -1,19 +1,12 @@
-# placeholder for work related stuffs
-
 # exports
 export RB_HOST="rb.corp.linkedin.com"
 
 # alias
 alias gitcorp='git config --local user.email sabandyopadhyay@linkedin.com'
-alias linux='ssh 172.21.216.97'
 alias startssh-li='eval `ssh-agent` && ssh-add ~/.ssh/sabandyo_at_linkedin.com_ssh_key'
 
-alias copywork='scp ~/GitHub/conf-files/dot-commons/work 172.21.216.97:~/GitHub/conf-files/dot-commons/work'
-alias cleanup='rm -rf tmp; pkill java; pkill node; just init --clean'
-alias exam='ember exam --split 8 --parallel'
-
+# uas
 alias deploy='mint build && mint build-cfg -f qei-lca1 && mint deploy -f qei-lca1'
-
 alias undeploy='mint undeploy -f qei-lca1'
 
 #used by typing log <repo> (i.e log uas)
@@ -21,18 +14,6 @@ log () {
   tail -f /export/content/lid/logs/$1-tomcat/i001/catalina.out
 }
 
-alias startsynclhw='watch-and-rsync -o=start -c=~/GitHub/conf-files/dot-work/rsync-configs/lighthouse-web.js'
-alias stopsynclhw='watch-and-rsync -o=stop -c=~/GitHub/conf-files/dot-work/rsync-configs/lighthouse-web.js'
-
-alias startsyncft='watch-and-rsync -o=start -c=~/GitHub/conf-files/dot-work/rsync-configs/flock-templates.js'
-alias stopsyncft='watch-and-rsync -o=stop -c=~/GitHub/conf-files/dot-work/rsync-configs/flock-templates.js'
-
-alias startsyncsa='watch-and-rsync -o=start -c=~/GitHub/conf-files/dot-work/rsync-configs/sales-api.js'
-alias stopsyncsa='watch-and-rsync -o=stop -c=~/GitHub/conf-files/dot-work/rsync-configs/sales-api.js'
-
+# email
 alias startflock='python scripts/flock-ui-dev.py --noserver'
 alias stopflock="lsof -i :1340 | tail -1 | awk '{print $2}' | xargs kill -9"
-
-alias sethosts="sudo rm -rf /etc/hosts && sudo ln -s  ~/.etc/hosts /etc/hosts"
-alias sethostsld1="sudo rm -rf /etc/hosts && sudo ln -s  ~/.etc/hosts-ld1 /etc/hosts"
-alias sethostsld2="sudo rm -rf /etc/hosts && sudo ln -s  ~/.etc/hosts-ld2 /etc/hosts"
