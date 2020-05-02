@@ -10,16 +10,6 @@ PATH=$PATH:$MONGODB
 HEROKU=/usr/local/heroku/bin
 PATH=$PATH:$HEROKU
 
-# Jmeter
-JMETER_HOME=/usr/local/lib/apache-jmeter
-JMETER=$JMETER_HOME/bin
-PATH=$PATH:$JMETER
-
-# Maven
-M2_HOME=/usr/local/lib/apache-maven
-M2=$M2_HOME/bin
-PATH=$PATH:$M2
-
 if [[ "$(uname -s)" == "Darwin" ]]; then
   # Java
   JAVA_HOME=$(/usr/libexec/java_home)
