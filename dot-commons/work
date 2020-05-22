@@ -1,4 +1,8 @@
+# unset
+unset VOLTA_HOME
+
 # exports
+export NODE_OPTIONS="--max-old-space-size=8192"
 export RB_HOST="rb.corp.linkedin.com"
 
 # alias

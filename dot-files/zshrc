@@ -7,7 +7,6 @@ source ~/.zhistory
 if [ -d ~/.oh-my-zsh ]; then
   ZSH=~/.oh-my-zsh
   ZSH_THEME="robbyrussell"
-  # ZSH_THEME="agnoster"
   DEFAULT_USER=$USER
   source $ZSH/oh-my-zsh.sh
   PROMPT='%{$fg[yellow]%}[%m] %{$reset_color%}'$PROMPT

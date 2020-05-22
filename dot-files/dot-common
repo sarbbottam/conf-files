@@ -4,9 +4,6 @@ source ~/.dot-commons/aliases
 # Invoke .exports
 source ~/.dot-commons/exports
 
-# Invoke .functions
-source ~/.dot-commons/functions
-
 # Only for Linux
 if [[ $OSTYPE == "linux-gnu" ]]; then
   if [ -x /usr/bin/keychain ] ; then
@@ -17,14 +14,14 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
   fi
 fi
 
+# Invoke .functions
+source ~/.dot-commons/functions
+
 # Invoke .path
 # source ~/.dot-commons/path
-
-# Invoke .work
-source ~/.dot-commons/work
 
 # Invoke travis.sh if available
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-unset VOLTA_HOME
-export NODE_OPTIONS="--max-old-space-size=8192"
+# Invoke .work
+source ~/.dot-commons/work

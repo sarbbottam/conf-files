@@ -30,7 +30,6 @@ fi
 
 printf "\n${BLUE}❯ cloning repos${NORMAL}\n"
 printf "${YELLOW}❯ it may take few minutes ...\n"
-# repos=('conf-files' 'oh-my-zsh' 'bash-it')
 repos=('conf-files' 'oh-my-zsh')
 for repo in "${repos[@]}"
 do
@@ -43,7 +42,6 @@ do
 done
 
 printf "\n${BLUE}❯ creating symlink for oh-mys${NORMAL}\n"
-# ohMys=('oh-my-zsh' 'bash-it');
 ohMys=('oh-my-zsh');
 for ohMy in "${ohMys[@]}"
 do
@@ -55,7 +53,6 @@ do
   fi
 done
 
-#bins=('shell-customize' 'node-setup' 'ruby-setup')
 bins=('shell-customize', 'node-setup')
 for bin in "${bins[@]}"
 do
