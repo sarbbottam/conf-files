@@ -11,6 +11,10 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
         /usr/bin/keychain ~/.ssh/${USER}_at_linkedin.com_ssh_key
         . ~/.keychain/`hostname`-sh
     fi
+    if [ -f ~/.ssh/id_rsa ] ; then
+        /usr/bin/keychain ~/.ssh/id_rsa
+        . ~/.keychain/`hostname`-sh
+    fi
   fi
 fi
 
